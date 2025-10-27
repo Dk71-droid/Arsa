@@ -7,8 +7,8 @@ import { HafalanGeneratorModal } from './HafalanGeneratorModal';
 import { HafalanContentModal } from './HafalanContentModal';
 
 const STATUS_MAP: Record<HafalanStatus, { label: string; color: string; hoverColor: string; }> = {
-    'lancar': { label: 'Lancar', color: 'bg-green-100 text-green-800', hoverColor: 'hover:bg-green-200' },
-    'mengulang': { label: 'Mengulang', color: 'bg-yellow-100 text-yellow-800', hoverColor: 'hover:bg-yellow-200' },
+    'lancar': { label: 'Lancar', color: 'bg-emerald-100 text-emerald-800', hoverColor: 'hover:bg-emerald-200' },
+    'mengulang': { label: 'Mengulang', color: 'bg-amber-100 text-amber-800', hoverColor: 'hover:bg-amber-200' },
     'belum': { label: 'Belum', color: 'bg-red-100 text-red-800', hoverColor: 'hover:bg-red-200' },
 };
 

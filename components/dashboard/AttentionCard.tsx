@@ -11,7 +11,7 @@ export const AttentionCard: React.FC<{
     return (
         <Card className="flex flex-col xl:col-span-1">
             <h3 className="text-xl font-bold text-slate-700 mb-4 flex items-center gap-3">
-                <AlertTriangleIcon className="h-6 w-6 text-yellow-500" />
+                <AlertTriangleIcon className="h-6 w-6 text-amber-500" />
                 Perlu Perhatian
             </h3>
             <div className="flex-grow flex flex-col gap-6">

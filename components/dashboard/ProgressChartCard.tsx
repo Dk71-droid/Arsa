@@ -35,7 +35,7 @@ export const ProgressChartCard: React.FC<ProgressChartCardProps> = ({ data, tota
   return (
     <Card className={`flex flex-col ${className}`}>
       <h3 className="text-xl font-bold text-slate-700 mb-2 flex items-center gap-3">
-        <ChartBarIcon className="h-6 w-6 text-teal-600" />
+        <ChartBarIcon className="h-6 w-6 text-indigo-600" />
         Grafik Kemajuan Formatif Lintas TP ({totalStudents} Siswa)
       </h3>
       <p className="text-sm text-slate-500 mb-4">
@@ -60,7 +60,7 @@ export const ProgressChartCard: React.FC<ProgressChartCardProps> = ({ data, tota
             })}
 
             {data.length > 1 && (
-              <polyline points={linePoints} fill="none" stroke="#14b8a6" strokeWidth="2" />
+              <polyline points={linePoints} fill="none" stroke="#4f46e5" strokeWidth="2" />
             )}
 
             {data.map((d, index) => {
@@ -71,7 +71,7 @@ export const ProgressChartCard: React.FC<ProgressChartCardProps> = ({ data, tota
                   cx={x}
                   cy={y}
                   r="4"
-                  fill="#14b8a6"
+                  fill="#4f46e5"
                   stroke="white"
                   strokeWidth="2"
                   className="cursor-pointer"

@@ -1,33 +1,36 @@
 // service-worker.js
 
-const CACHE_NAME = 'asisten-guru-cache-v1';
+const CACHE_NAME = 'arsa-cache-v1';
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
+  // Main script entry
   '/index.tsx',
-  '/App.tsx',
+  // Icon
   '/vite.svg',
+  // Main external dependencies from importmap
   'https://cdn.tailwindcss.com',
   'https://aistudiocdn.com/react@^19.1.1',
-  'https://aistudiocdn.com/react-dom@^19.1.1/client',
-  'https://aistudiocdn.com/@google/genai@^1.21.0'
+  'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js',
+  'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js'
 ];
 
-// Install event: cache the app shell and critical assets
+// Install event: cache the app shell and take control immediately
 self.addEventListener('install', event => {
+  self.skipWaiting(); // Force the waiting service worker to become the active service worker.
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Opened cache');
+        console.log('Service Worker: Caching app shell');
         return cache.addAll(URLS_TO_CACHE);
       })
       .catch(err => {
-        console.error('Failed to cache resources during install:', err);
+        console.error('Service Worker: Failed to cache app shell during install:', err);
       })
   );
 });
 
-// Activate event: clean up old caches
+// Activate event: clean up old caches and take control of clients
 self.addEventListener('activate', event => {
   const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
@@ -35,12 +38,12 @@ self.addEventListener('activate', event => {
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheWhitelist.indexOf(cacheName) === -1) {
-            console.log('Deleting old cache:', cacheName);
+            console.log('Service Worker: Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }
         })
       );
-    })
+    }).then(() => self.clients.claim()) // Take control of all open pages without waiting for reload.
   );
 });
 
@@ -48,6 +51,15 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   // We only want to cache GET requests.
   if (event.request.method !== 'GET') {
+    return;
+  }
+
+  // Define URLs that should always go to the network (e.g., API calls)
+  const isApiCall = event.request.url.includes('generativelanguage') || event.request.url.includes('firebase');
+
+  if (isApiCall) {
+    // For API calls, try network first. Don't cache them.
+    event.respondWith(fetch(event.request));
     return;
   }
 
@@ -72,10 +84,7 @@ self.addEventListener('fetch', event => {
 
             caches.open(CACHE_NAME)
               .then(cache => {
-                // We don't cache requests to the Gemini API itself, only static assets
-                if (!event.request.url.includes('generativelanguage')) {
-                    cache.put(event.request, responseToCache);
-                }
+                cache.put(event.request, responseToCache);
               });
 
             return networkResponse;

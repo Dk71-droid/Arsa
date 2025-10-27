@@ -58,7 +58,7 @@ const AssistantButton: React.FC<{
         return (
             <button
                 onClick={() => onClick('create')}
-                className="text-sm font-semibold text-white bg-teal-600 px-4 py-2 rounded-md transition-colors hover:bg-teal-700 shadow-sm flex items-center gap-2"
+                className="text-sm font-semibold text-white bg-indigo-600 px-4 py-2 rounded-md transition-colors hover:bg-indigo-700 shadow-sm flex items-center gap-2"
             >
                 <WandIcon className="h-4 w-4" />
                 Buat RPP
@@ -284,10 +284,10 @@ export const FormativeJournalView: React.FC<FormativeJournalViewProps> = ({ stud
 
     return (
         <div className="space-y-6">
-            <Card className="bg-teal-50 border-teal-200">
+            <Card className="bg-indigo-50 border-indigo-200">
                 <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
                     <div className="flex-1">
-                        <h2 className="text-xl font-bold text-teal-800">Jurnal Pertemuan Formatif</h2>
+                        <h2 className="text-xl font-bold text-indigo-800">Jurnal Pertemuan Formatif</h2>
                         <p className="text-slate-600 mt-1">Buat pertemuan baru untuk TP tertentu atau lihat riwayat pertemuan yang sudah tercatat.</p>
                     </div>
                     <div className="w-full sm:w-auto flex flex-col sm:flex-row items-stretch gap-2">
@@ -295,7 +295,7 @@ export const FormativeJournalView: React.FC<FormativeJournalViewProps> = ({ stud
                             onClick={() => setIsTpSelectionModalOpen(true)}
                             disabled={isButtonDisabled}
                             title={buttonTitle}
-                            className="flex items-center justify-center gap-2 font-semibold text-white bg-teal-600 border border-teal-600 rounded-md px-4 py-2.5 hover:bg-teal-700 transition-colors shadow-lg text-base disabled:bg-slate-400 disabled:cursor-not-allowed"
+                            className="flex items-center justify-center gap-2 font-semibold text-white bg-indigo-600 border border-indigo-600 rounded-md px-4 py-2.5 hover:bg-indigo-700 transition-colors shadow-lg text-base disabled:bg-slate-400 disabled:cursor-not-allowed"
                         >
                             <PlusIcon className="h-5 w-5" />
                             <span>Buat Pertemuan Baru</span>
@@ -336,17 +336,17 @@ export const FormativeJournalView: React.FC<FormativeJournalViewProps> = ({ stud
                         buttonClasses += 'bg-slate-200 text-slate-600 hover:bg-slate-300';
                     } else if (hasAssessments) {
                         buttonLabel = 'Edit Nilai';
-                        buttonClasses += 'bg-white text-teal-700 border border-teal-500 hover:bg-teal-50 shadow-sm';
+                        buttonClasses += 'bg-white text-indigo-700 border border-indigo-500 hover:bg-indigo-50 shadow-sm';
                     } else {
                         buttonLabel = 'Input Nilai';
-                        buttonClasses += 'bg-teal-600 text-white hover:bg-teal-700 shadow-md transform hover:-translate-y-px';
+                        buttonClasses += 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-md transform hover:-translate-y-px';
                     }
 
                     return (
-                        <Card key={entry.pertemuan} className="group p-0 transition-all hover:shadow-lg hover:border-teal-300">
+                        <Card key={entry.pertemuan} className="group p-0 transition-all hover:shadow-lg hover:border-indigo-300">
                             <div className="flex flex-col md:flex-row">
                                 <div className="p-4 bg-slate-50 md:w-48 flex-shrink-0 text-left border-b md:border-b-0 md:border-r border-slate-200">
-                                    <h3 className="text-lg font-bold text-teal-700">Pertemuan ke-{entry.pertemuan}</h3>
+                                    <h3 className="text-lg font-bold text-indigo-700">Pertemuan ke-{entry.pertemuan}</h3>
                                     <p className="text-xs text-slate-500 mt-1 flex items-center gap-1.5">
                                         <CalendarIcon className="h-3 w-3" />
                                         {new Date(entry.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })}
@@ -363,7 +363,7 @@ export const FormativeJournalView: React.FC<FormativeJournalViewProps> = ({ stud
                                         <h4 className="font-semibold text-slate-700">Fokus Tujuan Pembelajaran</h4>
                                          {!hasAssessments && (
                                             <div className="mt-2 flex items-center gap-2">
-                                                <span className="px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800 border border-yellow-200 flex items-center gap-1.5">
+                                                <span className="px-2 py-1 text-xs font-semibold rounded-full bg-amber-100 text-amber-800 border border-amber-200 flex items-center gap-1.5">
                                                     <AlertTriangleIcon className="h-3 w-3" />
                                                     Nilai belum diinput
                                                 </span>
@@ -478,14 +478,14 @@ export const FormativeJournalView: React.FC<FormativeJournalViewProps> = ({ stud
                                 <p className="text-sm font-semibold text-slate-700 mb-2">Rekomendasi Cerdas (AI)</p>
                                 <button 
                                     onClick={() => recommendation.tp && handleTpSelectionChange(recommendation.tp.id)}
-                                    className={`w-full text-left p-3 rounded-lg border-2 transition-colors ${selectedTpIdForNewSession === recommendation.tp?.id ? 'bg-teal-50 border-teal-500' : 'bg-slate-50 border-slate-200 hover:border-teal-400'}`}
+                                    className={`w-full text-left p-3 rounded-lg border-2 transition-colors ${selectedTpIdForNewSession === recommendation.tp?.id ? 'bg-indigo-50 border-indigo-500' : 'bg-slate-50 border-slate-200 hover:border-indigo-400'}`}
                                 >
                                     {recommendation.tp ? (
                                         <>
-                                            <p className="font-bold text-teal-800">{recommendation.tp.id}</p>
+                                            <p className="font-bold text-indigo-800">{recommendation.tp.id}</p>
                                             <p className="text-sm text-slate-600 line-clamp-2">{recommendation.tp.deskripsi}</p>
                                             <div className="mt-2 pt-2 border-t border-slate-200 text-xs text-slate-500 flex items-start gap-2">
-                                                <LightbulbIcon className="h-4 w-4 text-yellow-500 flex-shrink-0 mt-0.5" />
+                                                <LightbulbIcon className="h-4 w-4 text-amber-500 flex-shrink-0 mt-0.5" />
                                                 <p><strong className="font-semibold text-slate-600">Alasan:</strong> {recommendation.justification}</p>
                                             </div>
                                         </>
@@ -517,7 +517,7 @@ export const FormativeJournalView: React.FC<FormativeJournalViewProps> = ({ stud
                         </main>
                         <footer className="p-4 bg-slate-50 border-t flex justify-end gap-2">
                             <button onClick={() => setIsTpSelectionModalOpen(false)} className="px-4 py-2 bg-slate-200 text-slate-700 font-semibold rounded-md hover:bg-slate-300">Batal</button>
-                            <button onClick={handleConfirmNewSession} disabled={!selectedTpIdForNewSession} className="px-4 py-2 bg-teal-600 text-white font-semibold rounded-md hover:bg-teal-700 disabled:bg-slate-400">
+                            <button onClick={handleConfirmNewSession} disabled={!selectedTpIdForNewSession} className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 disabled:bg-slate-400">
                                 Lanjutkan
                             </button>
                         </footer>

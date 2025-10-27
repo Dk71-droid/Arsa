@@ -86,7 +86,7 @@ export const PredicateSelector = memo<PredicateSelectorProps>(({ studentId, rubr
         
         const tooltipContent = (
             <>
-                <h5 className="font-bold text-teal-300 text-sm mb-1">{levelInfo.label} (Level {level})</h5>
+                <h5 className="font-bold text-indigo-300 text-sm mb-1">{levelInfo.label} (Level {level})</h5>
                 <p className="text-slate-200">{kriteriaDeskripsi}</p>
             </>
         );

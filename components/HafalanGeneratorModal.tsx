@@ -58,7 +58,7 @@ export const HafalanGeneratorModal: React.FC<HafalanGeneratorModalProps> = ({ is
                         <Loader text="AI sedang memecah materi hafalan..." />
                     ) : generatedPackage ? (
                         <div className="space-y-4">
-                            <h4 className="font-bold text-lg text-teal-700">Hasil dari AI</h4>
+                            <h4 className="font-bold text-lg text-indigo-700">Hasil dari AI</h4>
                             <p className="text-sm text-slate-600">Tinjau item yang dibuat AI. Jika sudah sesuai, simpan paket ini.</p>
                             <div className="p-3 bg-slate-100 rounded-md border">
                                 <p><strong>Nama Paket:</strong> {generatedPackage.name}</p>
@@ -96,9 +96,9 @@ export const HafalanGeneratorModal: React.FC<HafalanGeneratorModalProps> = ({ is
                 <footer className="p-4 bg-slate-50 border-t flex justify-end gap-2">
                     <button onClick={onClose} className="px-4 py-2 bg-slate-200 text-slate-700 font-semibold rounded-md hover:bg-slate-300">Batal</button>
                     {generatedPackage ? (
-                        <button onClick={handleSave} className="px-4 py-2 bg-teal-600 text-white font-semibold rounded-md hover:bg-teal-700">Simpan Paket</button>
+                        <button onClick={handleSave} className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700">Simpan Paket</button>
                     ) : (
-                        <button onClick={handleGenerate} disabled={!topic.trim() || !name.trim()} className="px-4 py-2 bg-teal-600 text-white font-semibold rounded-md hover:bg-teal-700 disabled:bg-slate-400 flex items-center gap-2">
+                        <button onClick={handleGenerate} disabled={!topic.trim() || !name.trim()} className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 disabled:bg-slate-400 flex items-center gap-2">
                             <WandIcon className="h-5 w-5"/>
                             Generate dengan AI
                         </button>

@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 
 export const DataTransferModal: React.FC<{
@@ -80,7 +81,7 @@ export const DataTransferModal: React.FC<{
                                      {importStatus?.success ? 'Tutup' : 'Batal'}
                                  </button>
                                 {mode === 'export' ? (
-                                    <button onClick={handleCopy} className="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 min-w-[130px]">{copySuccess || 'Salin ke Clipboard'}</button>
+                                    <button onClick={handleCopy} className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 min-w-[130px]">{copySuccess || 'Salin ke Clipboard'}</button>
                                 ) : (
                                     <button 
                                         onClick={handleImportClick} 
@@ -88,7 +89,7 @@ export const DataTransferModal: React.FC<{
                                         className={`px-4 py-2 text-white rounded-md transition-colors disabled:bg-slate-400 ${
                                             isConfirming 
                                                 ? 'bg-red-600 hover:bg-red-700' 
-                                                : 'bg-teal-600 hover:bg-teal-700'
+                                                : 'bg-indigo-600 hover:bg-indigo-700'
                                         }`}
                                     >
                                         {isConfirming ? 'Ya, Konfirmasi & Timpa' : 'Impor Data'}

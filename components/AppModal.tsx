@@ -15,7 +15,7 @@ export const AppModal: React.FC<AppModalProps> = ({ isOpen, type, title, message
   if (!isOpen) return null;
 
   const isConfirm = type === 'confirm';
-  const icon = isConfirm ? <AlertTriangleIcon className="h-6 w-6 text-red-600" /> : <CheckIcon className="h-6 w-6 text-teal-600" />;
+  const icon = isConfirm ? <AlertTriangleIcon className="h-6 w-6 text-red-600" /> : <CheckIcon className="h-6 w-6 text-indigo-600" />;
   const titleColor = isConfirm ? 'text-red-800' : 'text-slate-800';
 
   const handleConfirm = () => {
@@ -41,7 +41,7 @@ export const AppModal: React.FC<AppModalProps> = ({ isOpen, type, title, message
                 )}
                 <button 
                     onClick={handleConfirm} 
-                    className={`px-4 py-2 text-white font-semibold rounded-md ${isConfirm ? 'bg-red-600 hover:bg-red-700' : 'bg-teal-600 hover:bg-teal-700'}`}
+                    className={`px-4 py-2 text-white font-semibold rounded-md ${isConfirm ? 'bg-red-600 hover:bg-red-700' : 'bg-indigo-600 hover:bg-indigo-700'}`}
                 >
                     {isConfirm ? confirmText : 'OK'}
                 </button>

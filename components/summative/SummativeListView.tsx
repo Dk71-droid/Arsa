@@ -75,7 +75,7 @@ export const SummativeListView: React.FC<SummativeListViewProps> = ({
                     <div className="w-full sm:w-auto flex flex-col sm:flex-row items-stretch gap-2">
                         <button
                             onClick={onCreatePackage}
-                            className="w-full sm:w-auto flex items-center justify-center gap-2 font-semibold text-white bg-teal-600 border border-teal-600 rounded-md px-4 py-2.5 hover:bg-teal-700 transition-colors shadow-lg text-base"
+                            className="w-full sm:w-auto flex items-center justify-center gap-2 font-semibold text-white bg-indigo-600 border border-indigo-600 rounded-md px-4 py-2.5 hover:bg-indigo-700 transition-colors shadow-lg text-base"
                         >
                             <PlusIcon className="h-5 w-5" />
                             <span>Buat Sumatif Baru</span>
@@ -88,13 +88,13 @@ export const SummativeListView: React.FC<SummativeListViewProps> = ({
                 {packages.map(pkg => {
                     const { tuntasCount, totalStudents, completionPercentage } = calculatePackageCompletion(pkg);
                     return (
-                        <Card key={pkg.id} className="p-0 overflow-hidden transition-all hover:shadow-lg hover:border-teal-300 group">
+                        <Card key={pkg.id} className="p-0 overflow-hidden transition-all hover:shadow-lg hover:border-indigo-300 group">
                             <div className="flex flex-col md:flex-row relative">
                                 <div className="p-4 bg-slate-50 md:w-48 flex-shrink-0 text-center md:text-left border-b md:border-b-0 md:border-r border-slate-200">
-                                    <h3 className="text-lg font-bold text-teal-700 truncate">{pkg.name}</h3>
+                                    <h3 className="text-lg font-bold text-indigo-700 truncate">{pkg.name}</h3>
                                     <div className="mt-2">
                                         <div className="w-full bg-slate-200 rounded-full h-2.5" title={`${completionPercentage.toFixed(0)}% Tuntas`}>
-                                            <div className={`h-2.5 rounded-full transition-all duration-500 ${completionPercentage > 85 ? 'bg-green-500' : 'bg-teal-500'}`} style={{ width: `${completionPercentage}%` }}></div>
+                                            <div className={`h-2.5 rounded-full transition-all duration-500 ${completionPercentage > 85 ? 'bg-green-500' : 'bg-indigo-500'}`} style={{ width: `${completionPercentage}%` }}></div>
                                         </div>
                                         <p className="text-xs text-slate-500 mt-1">{tuntasCount} / {totalStudents} Siswa Tuntas</p>
                                     </div>
@@ -113,7 +113,7 @@ export const SummativeListView: React.FC<SummativeListViewProps> = ({
                                     <div className="w-full md:w-auto flex items-stretch gap-2 self-start flex-shrink-0">
                                         <button
                                             onClick={() => onSelectPackage(pkg.id)}
-                                            className="flex-grow text-sm font-bold px-4 py-2 rounded-md transition-colors bg-white text-teal-700 border border-teal-500 hover:bg-teal-50 shadow-sm"
+                                            className="flex-grow text-sm font-bold px-4 py-2 rounded-md transition-colors bg-white text-indigo-700 border border-indigo-500 hover:bg-indigo-50 shadow-sm"
                                         >
                                             Input/Lihat Nilai
                                         </button>
@@ -121,7 +121,7 @@ export const SummativeListView: React.FC<SummativeListViewProps> = ({
                                             onClick={() => onGenerateInstrument(pkg)}
                                             disabled={!isOnline}
                                             title={isOnline ? "Buat instrumen asesmen dengan AI" : "Fitur AI memerlukan koneksi internet"}
-                                            className="text-sm font-bold px-4 py-2 rounded-md transition-colors bg-teal-600 text-white hover:bg-teal-700 shadow-md transform hover:-translate-y-px flex items-center gap-2 disabled:bg-slate-400 disabled:cursor-not-allowed"
+                                            className="text-sm font-bold px-4 py-2 rounded-md transition-colors bg-indigo-600 text-white hover:bg-indigo-700 shadow-md transform hover:-translate-y-px flex items-center gap-2 disabled:bg-slate-400 disabled:cursor-not-allowed"
                                         >
                                             <WandIcon className="h-4 w-4" />
                                             <span>Generate Instrumen (AI)</span>

@@ -13,7 +13,7 @@ interface TutorialStep {
 
 const steps: TutorialStep[] = [
     {
-        icon: <BookOpenIcon className="h-12 w-12 text-teal-500" />,
+        icon: <BookOpenIcon className="h-12 w-12 text-indigo-500" />,
         title: "Selamat Datang di Asisten Guru!",
         content: "Mari kita ikuti tur singkat untuk mengenal fitur-fitur utama yang akan membantu Anda merancang pembelajaran yang lebih efektif dan efisien."
     },
@@ -48,7 +48,7 @@ const steps: TutorialStep[] = [
         content: "Dashboard adalah pusat komando Anda. Lihat progres kelas, identifikasi siswa yang perlu perhatian, dan dapatkan rekomendasi pembelajaran selanjutnya dari AI."
     },
     {
-        icon: <CheckCircleIcon className="h-12 w-12 text-teal-500" />,
+        icon: <CheckCircleIcon className="h-12 w-12 text-indigo-500" />,
         title: "Anda Siap Memulai!",
         content: "Sekarang Anda sudah mengenal dasar-dasarnya. Jelajahi semua fitur dan selamat merancang pembelajaran yang lebih bermakna!"
     }
@@ -159,7 +159,7 @@ export const OnboardingTutorial: React.FC<OnboardingTutorialProps> = ({ onComple
                             ) : (
                                 <form onSubmit={handleSaveKey} className="space-y-2">
                                     <input type="password" value={apiKeyInput} onChange={(e) => setApiKeyInput(e.target.value)} placeholder="Tempel Kunci API Gemini Anda di sini" className="w-full p-2 border border-slate-300 rounded-md shadow-sm" />
-                                    <button type="submit" disabled={!apiKeyInput.trim() || isSavingKey} className="w-full bg-teal-600 text-white font-semibold py-2 rounded-md hover:bg-teal-700 disabled:bg-slate-400">
+                                    <button type="submit" disabled={!apiKeyInput.trim() || isSavingKey} className="w-full bg-indigo-600 text-white font-semibold py-2 rounded-md hover:bg-indigo-700 disabled:bg-slate-400">
                                         {isSavingKey ? 'Menyimpan...' : 'Simpan Kunci API'}
                                     </button>
                                 </form>
@@ -196,7 +196,7 @@ export const OnboardingTutorial: React.FC<OnboardingTutorialProps> = ({ onComple
                                             </select>
                                         </div>
                                     </div>
-                                    <button type="submit" disabled={!className.trim() || !phase || !grade || isCreatingClass} className="w-full bg-teal-600 text-white font-semibold py-2 rounded-md hover:bg-teal-700 disabled:bg-slate-400">
+                                    <button type="submit" disabled={!className.trim() || !phase || !grade || isCreatingClass} className="w-full bg-indigo-600 text-white font-semibold py-2 rounded-md hover:bg-indigo-700 disabled:bg-slate-400">
                                         {isCreatingClass ? 'Membuat...' : 'Buat Kelas'}
                                     </button>
                                 </form>
@@ -227,7 +227,7 @@ export const OnboardingTutorial: React.FC<OnboardingTutorialProps> = ({ onComple
                             <div
                                 key={index}
                                 className={`h-2 w-2 rounded-full transition-all ${
-                                    index === currentStep ? 'w-6 bg-teal-500' : 'bg-slate-300'
+                                    index === currentStep ? 'w-6 bg-indigo-500' : 'bg-slate-300'
                                 }`}
                             />
                         ))}
@@ -253,7 +253,7 @@ export const OnboardingTutorial: React.FC<OnboardingTutorialProps> = ({ onComple
                             <button
                                 onClick={handleNext}
                                 disabled={(currentStep === 1 && !isKeyConfigured) || (currentStep === 3 && !isClassCreatedThisSession)}
-                                className="px-6 py-2 font-semibold text-white bg-teal-600 rounded-md hover:bg-teal-700 shadow-md disabled:bg-slate-400 disabled:cursor-not-allowed"
+                                className="px-6 py-2 font-semibold text-white bg-indigo-600 rounded-md hover:bg-indigo-700 shadow-md disabled:bg-slate-400 disabled:cursor-not-allowed"
                                 title={
                                     (currentStep === 1 && !isKeyConfigured) ? 'Harap simpan Kunci API untuk melanjutkan' : 
                                     (currentStep === 3 && !isClassCreatedThisSession) ? 'Harap buat kelas pertama Anda untuk melanjutkan' : ''

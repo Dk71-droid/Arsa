@@ -72,8 +72,8 @@ export const LoginView: React.FC = () => {
 
     return (
         <div className="min-h-screen flex flex-col md:flex-row bg-white">
-            {/* --- Branding Column (Left) --- Reverted to original design */}
-            <div className="hidden md:flex md:w-1/2 lg:w-2/5 bg-gradient-to-br from-teal-500 to-cyan-600 relative items-center justify-center p-12 text-white overflow-hidden">
+            {/* --- Branding Column (Left) --- */}
+            <div className="hidden md:flex md:w-1/2 lg:w-2/5 bg-gradient-to-br from-indigo-600 to-violet-600 relative items-center justify-center p-12 text-white overflow-hidden">
                  <DecorativeElement />
                  <div className="relative z-10">
                      <div className="flex items-center gap-4">
@@ -89,12 +89,12 @@ export const LoginView: React.FC = () => {
                  </div>
             </div>
 
-            {/* --- Form Column (Right) --- Container widened */}
+            {/* --- Form Column (Right) --- */}
             <div className="w-full md:w-1/2 lg:w-3/5 flex flex-col items-center justify-center bg-slate-50 p-6 sm:p-12">
-                <div className="w-full max-w-lg"> {/* Changed from max-w-sm to max-w-lg */}
+                <div className="w-full max-w-lg">
                     {/* Mobile Header */}
                     <div className="text-center mb-8 md:hidden">
-                        <BookOpenIcon className="mx-auto h-20 w-20 text-teal-500" />
+                        <BookOpenIcon className="mx-auto h-20 w-20 text-indigo-500" />
                         <h1 className="mt-4 text-3xl font-bold text-slate-800">Arsa</h1>
                     </div>
                     
@@ -116,7 +116,7 @@ export const LoginView: React.FC = () => {
                                         required
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
-                                        className="block w-full rounded-lg border-slate-300 pl-10 focus:border-teal-500 focus:ring-teal-500 sm:text-sm p-3"
+                                        className="block w-full rounded-lg border-slate-300 pl-10 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3"
                                         placeholder="anda@email.com"
                                     />
                                 </div>
@@ -137,7 +137,7 @@ export const LoginView: React.FC = () => {
                                         minLength={6}
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
-                                        className="block w-full rounded-lg border-slate-300 pl-10 focus:border-teal-500 focus:ring-teal-500 sm:text-sm p-3"
+                                        className="block w-full rounded-lg border-slate-300 pl-10 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3"
                                         placeholder="••••••••"
                                     />
                                 </div>
@@ -149,7 +149,7 @@ export const LoginView: React.FC = () => {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-md text-base font-bold text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 disabled:bg-slate-400 disabled:cursor-wait transition-all transform hover:-translate-y-0.5"
+                                    className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-md text-base font-bold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-slate-400 disabled:cursor-wait transition-all transform hover:-translate-y-0.5"
                                 >
                                     {isSubmitting ? 'Memproses...' : (isLogin ? 'Masuk' : 'Daftar')}
                                 </button>
@@ -161,7 +161,7 @@ export const LoginView: React.FC = () => {
                     <div className="mt-8 text-center">
                         <p className="text-sm text-slate-600">
                             {isLogin ? 'Belum punya akun?' : 'Sudah punya akun?'}
-                            <button onClick={() => { setIsLogin(!isLogin); setError(null); }} className="font-semibold text-teal-600 hover:text-teal-500 ml-1">
+                            <button onClick={() => { setIsLogin(!isLogin); setError(null); }} className="font-semibold text-indigo-600 hover:text-indigo-500 ml-1">
                                 {isLogin ? 'Daftar di sini' : 'Masuk di sini'}
                             </button>
                         </p>

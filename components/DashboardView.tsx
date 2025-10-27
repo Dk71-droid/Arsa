@@ -9,7 +9,7 @@ import { UtilityCard } from './dashboard/UtilityCard';
 import { InterventionListCard } from './dashboard/InterventionListCard';
 import { RemedialAssessorModal } from './dashboard/RemedialAssessorModal';
 import { calculateTpCompletion } from './formative/utils';
-import { useAppData } from '../hooks/useAppData';
+import { useAppData } from '../../hooks/useAppData';
 
 // =================================================================
 // CONSTANTS
@@ -285,7 +285,7 @@ export const DashboardView: React.FC = () => {
                 <p className="mt-2 text-slate-500 max-w-sm">Untuk melihat dashboard, silakan pilih kelas aktif dari menu di atas, atau buat kelas baru di menu Pengaturan.</p>
                  <button
                     onClick={() => setActiveView('settings')}
-                    className="mt-4 flex items-center gap-2 text-md font-semibold text-white bg-teal-600 border border-teal-600 rounded-md px-5 py-2 hover:bg-teal-700 transition-colors mx-auto"
+                    className="mt-4 flex items-center gap-2 text-md font-semibold text-white bg-indigo-600 border border-indigo-600 rounded-md px-5 py-2 hover:bg-indigo-700 transition-colors mx-auto"
                 >
                     <UsersIcon className="h-5 w-5" />
                     <span>Buka Manajemen Kelas</span>

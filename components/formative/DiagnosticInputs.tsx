@@ -11,9 +11,9 @@ interface DiagnosticLevelSelectorProps {
 }
 
 const DIAGNOSTIC_LEVELS = [
-    { level: 3, label: "Mahir", color: "bg-green-100 text-green-800 border-green-300", short: "M" },
-    { level: 2, label: "Cakap", color: "bg-blue-100 text-blue-800 border-blue-300", short: "C" },
-    { level: 1, label: "Baru Berkembang", color: "bg-yellow-100 text-yellow-800 border-yellow-300", short: "B" },
+    { level: 3, label: "Mahir", color: "bg-emerald-100 text-emerald-800 border-emerald-300", short: "M" },
+    { level: 2, label: "Cakap", color: "bg-indigo-100 text-indigo-800 border-indigo-300", short: "C" },
+    { level: 1, label: "Baru Berkembang", color: "bg-amber-100 text-amber-800 border-amber-300", short: "B" },
 ];
 
 export const DiagnosticLevelSelector = memo<DiagnosticLevelSelectorProps>(({ studentId, kriteria, currentLevel, onSelect, onShowTooltip, onHideTooltip }) => {
@@ -36,7 +36,7 @@ export const DiagnosticLevelSelector = memo<DiagnosticLevelSelectorProps>(({ stu
                 
                 const tooltipContent = (
                     <>
-                        <h5 className="font-bold text-teal-300 text-sm mb-1">{label} (Kelompok {level})</h5>
+                        <h5 className="font-bold text-indigo-300 text-sm mb-1">{label} (Kelompok {level})</h5>
                         <p className="text-slate-200">{deskripsi}</p>
                     </>
                 );

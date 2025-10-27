@@ -78,7 +78,7 @@ export const CreateSummativeModal: React.FC<CreateSummativeModalProps> = ({
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             placeholder="Contoh: Ulangan Harian Bab 1, Sumatif Tengah Semester"
-                            className="w-full p-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500"
+                            className="w-full p-2 border border-slate-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                         />
                     </div>
                     <div>
@@ -97,7 +97,7 @@ export const CreateSummativeModal: React.FC<CreateSummativeModalProps> = ({
                                             type="checkbox"
                                             checked={areAllSelected}
                                             onChange={() => handleToggleUnit(tpIdsInUnit)}
-                                            className="h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+                                            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                         />
                                         <label htmlFor={`unit-select-${unit.id}`} className="ml-2 font-semibold text-slate-700 text-sm cursor-pointer">{unit.nama}</label>
                                     </div>
@@ -108,7 +108,7 @@ export const CreateSummativeModal: React.FC<CreateSummativeModalProps> = ({
                                                     type="checkbox"
                                                     checked={selectedTpIds.has(tp.id)}
                                                     onChange={() => handleToggleTp(tp.id)}
-                                                    className="h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500 mt-0.5"
+                                                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 mt-0.5"
                                                 />
                                                 <span className="ml-3 text-sm text-slate-700">
                                                     <strong>{tp.id}:</strong> {tp.deskripsi}
@@ -126,7 +126,7 @@ export const CreateSummativeModal: React.FC<CreateSummativeModalProps> = ({
                     <button
                         onClick={handleCreate}
                         disabled={!name.trim() || selectedTpIds.size === 0}
-                        className="px-4 py-2 bg-teal-600 text-white font-semibold rounded-md hover:bg-teal-700 disabled:bg-slate-400"
+                        className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 disabled:bg-slate-400"
                     >
                         Buat Paket
                     </button>

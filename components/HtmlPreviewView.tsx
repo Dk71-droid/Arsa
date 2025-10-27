@@ -41,7 +41,7 @@ const processHtmlForImageUploads = (html: string): string => {
                         </button>
                         
                         <button onclick="handleGeneratePrompt(event, '${uploaderId}', '${escapedDescription}')" style="display: inline-flex; align-items:center; gap: 8px; padding: 8px 16px; background-color: #64748b; color: white; font-weight: 600; border-radius: 8px; cursor: pointer; transition: background-color 0.2s; border: none;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
                             Buat Prompt
                         </button>
                     </div>
@@ -259,10 +259,10 @@ export const HtmlPreviewView: React.FC = () => {
             const messageDiv = printWindow.document.createElement('div');
             messageDiv.className = 'no-print';
             messageDiv.innerHTML = `
-                <div style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%); background-color: #f0fdfa; border: 1px solid #99f6e4; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 9999; font-family: sans-serif; width: 90%; max-width: 600px;">
-                    <strong style="font-size: 16px; color: #134e4a;">Siap untuk Mencetak</strong>
-                    <p style="margin: 8px 0 12px 0; font-size: 14px; color: #115e59;">Gunakan tombol di bawah, atau fungsi cetak browser (Ctrl/Cmd + P) untuk menyimpan sebagai PDF atau mencetak langsung.</p>
-                    <button onclick="window.print()" style="background-color: #0d9488; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px; transition: background-color 0.2s;">
+                <div style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%); background-color: #eef2ff; border: 1px solid #c7d2fe; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 9999; font-family: sans-serif; width: 90%; max-width: 600px;">
+                    <strong style="font-size: 16px; color: #4338ca;">Siap untuk Mencetak</strong>
+                    <p style="margin: 8px 0 12px 0; font-size: 14px; color: #4f46e5;">Gunakan tombol di bawah, atau fungsi cetak browser (Ctrl/Cmd + P) untuk menyimpan sebagai PDF atau mencetak langsung.</p>
+                    <button onclick="window.print()" style="background-color: #4f46e5; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px; transition: background-color 0.2s;">
                         Cetak Halaman Ini
                     </button>
                 </div>
@@ -372,7 +372,7 @@ export const HtmlPreviewView: React.FC = () => {
                                      onClick={() => setActiveTabIndex(index)}
                                      className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors ${
                                          activeTabIndex === index
-                                             ? 'bg-teal-600 text-white shadow-sm'
+                                             ? 'bg-indigo-600 text-white shadow-sm'
                                              : 'text-slate-600 hover:bg-slate-100'
                                      }`}
                                  >
@@ -392,15 +392,15 @@ export const HtmlPreviewView: React.FC = () => {
                 <aside className="w-72 flex-shrink-0 bg-white border-r border-slate-200 p-4 flex flex-col">
                     <h3 className="text-lg font-bold text-slate-700">Aksi Dokumen</h3>
                     <p className="text-sm text-slate-500 mt-1">
-                        Aksi berikut berlaku untuk tab <strong className="text-teal-700">{isTabView ? (htmlPreviewState.content as {title: string}[])[activeTabIndex].title : 'aktif'}</strong>.
+                        Aksi berikut berlaku untuk tab <strong className="text-indigo-700">{isTabView ? (htmlPreviewState.content as {title: string}[])[activeTabIndex].title : 'aktif'}</strong>.
                     </p>
                     
                     <nav className="flex flex-col gap-2 mt-6">
                         <ActionButton
                             onClick={toggleEditMode}
-                            className={isEditing ? 'bg-teal-50 text-teal-800 font-semibold hover:bg-teal-100' : ''}
+                            className={isEditing ? 'bg-indigo-50 text-indigo-800 font-semibold hover:bg-indigo-100' : ''}
                         >
-                            {isEditing ? <CheckIcon className="h-5 w-5 text-teal-600 flex-shrink-0" /> : <PencilIcon className="h-5 w-5 text-slate-500 flex-shrink-0" />}
+                            {isEditing ? <CheckIcon className="h-5 w-5 text-indigo-600 flex-shrink-0" /> : <PencilIcon className="h-5 w-5 text-slate-500 flex-shrink-0" />}
                             <span className="flex-grow">{isEditing ? 'Kunci & Simpan Edit' : 'Aktifkan Mode Edit'}</span>
                         </ActionButton>
                         <ActionButton onClick={handlePasteFromClipboard}>

@@ -76,7 +76,7 @@ export const SessionNoteModal: React.FC<{
                 value={narrative}
                 onChange={(e) => setNarrative(e.target.value)}
                 rows={8}
-                className="w-full p-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500"
+                className="w-full p-2 border border-slate-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                 placeholder="Contoh: Andi menunjukkan kemajuan pesat, sudah bisa mandiri. Budi masih perlu bimbingan pada aspek X. Kelompok Citra sangat kolaboratif dan kreatif dalam presentasi mereka."
                 autoFocus
               />
@@ -122,12 +122,12 @@ export const SessionNoteModal: React.FC<{
           )}
 
           {view === 'input' && (
-            <button onClick={handleProcessWithAI} className="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 font-semibold flex items-center gap-2 disabled:bg-slate-400">
+            <button onClick={handleProcessWithAI} className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-semibold flex items-center gap-2 disabled:bg-slate-400">
               <WandIcon className="h-5 w-5"/> Proses dengan AI
             </button>
           )}
           {view === 'verify' && (
-             <button onClick={handleSaveAll} className="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 font-semibold">Simpan Semua Catatan</button>
+             <button onClick={handleSaveAll} className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-semibold">Simpan Semua Catatan</button>
           )}
         </div>
       </div>

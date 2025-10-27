@@ -54,7 +54,7 @@ export const RancanganPembelajaranView: React.FC = () => {
     if (viewingPlanIdInDataKurikulum) {
         return (
            <div className="overflow-y-auto h-full">
-                <button onClick={() => setViewingPlanIdInDataKurikulum(null)} className="mb-4 flex items-center gap-2 text-sm font-semibold text-teal-600 hover:text-teal-800">
+                <button onClick={() => setViewingPlanIdInDataKurikulum(null)} className="mb-4 flex items-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-800">
                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M15 18l-6-6 6-6"/></svg>
                    Kembali ke Daftar Rancangan
                </button>
@@ -76,7 +76,7 @@ export const RancanganPembelajaranView: React.FC = () => {
                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4">
                    <h2 className="text-2xl font-bold text-slate-800">Rencana Tersimpan</h2>
                    <div className="flex items-center gap-2 self-end sm:self-center">
-                        <button onClick={handleShowNewPlanGenerator} className="flex items-center gap-2 text-sm font-semibold text-white bg-teal-600 border border-teal-600 rounded-md px-3 py-1.5 hover:bg-teal-700 transition-colors">
+                        <button onClick={handleShowNewPlanGenerator} className="flex items-center gap-2 text-sm font-semibold text-white bg-indigo-600 border border-indigo-600 rounded-md px-3 py-1.5 hover:bg-indigo-700 transition-colors">
                            <WandIcon className="h-4 w-4" /><span>Buat Rencana Baru</span>
                        </button>
                        <button onClick={() => setShowImportModal(true)} className="flex items-center gap-2 text-sm font-semibold text-slate-600 bg-white border border-slate-300 rounded-md px-3 py-1.5 hover:bg-slate-50 transition-colors">
@@ -92,7 +92,7 @@ export const RancanganPembelajaranView: React.FC = () => {
                {!isLoading && learningPlans.length > 0 ? (
                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                        {learningPlans.map(plan => (
-                           <div key={plan.id} className={`group relative bg-white rounded-xl border shadow-lg text-left transition-all transform hover:-translate-y-1 ${deletingPlanId === plan.id ? 'border-red-500 ring-2 ring-red-200' : 'border-slate-200 hover:border-teal-500'}`}>
+                           <div key={plan.id} className={`group relative bg-white rounded-xl border shadow-lg text-left transition-all transform hover:-translate-y-1 ${deletingPlanId === plan.id ? 'border-red-500 ring-2 ring-red-200' : 'border-slate-200 hover:border-indigo-500'}`}>
                                {deletingPlanId === plan.id ? (
                                    <div className="p-4 w-full text-center bg-red-50">
                                        <h4 className="font-bold text-red-800">Yakin ingin hapus?</h4>
@@ -106,7 +106,7 @@ export const RancanganPembelajaranView: React.FC = () => {
                                    <>
                                        <div onClick={() => setViewingPlanIdInDataKurikulum(plan.id)} className="p-4 w-full text-left cursor-pointer" role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setViewingPlanIdInDataKurikulum(plan.id); }}}>
                                            <div className="flex items-center gap-3">
-                                               <FolderIcon className="h-8 w-8 text-teal-500" />
+                                               <FolderIcon className="h-8 w-8 text-indigo-500" />
                                                <div>
                                                    <h3 className="font-bold text-slate-800">{plan.name}</h3>
                                                    <p className="text-xs text-slate-500">Fase {plan.curriculum.phase}</p>

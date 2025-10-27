@@ -19,7 +19,7 @@ const PlanSelector: React.FC<PlanSelectorProps> = ({ learningPlans, activePlanId
         id={id}
         value={activePlanId || ''}
         onChange={(e) => onPlanChange(e.target.value)}
-        className="block w-full pl-2 pr-8 py-1.5 text-sm border-slate-300 focus:outline-none focus:ring-teal-500 focus:border-teal-500 rounded-md truncate bg-white disabled:bg-slate-100 disabled:text-slate-500 disabled:cursor-not-allowed"
+        className="block w-full pl-2 pr-8 py-1.5 text-sm border-slate-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-md truncate bg-white disabled:bg-slate-100 disabled:text-slate-500 disabled:cursor-not-allowed"
         aria-label="Pilih Rencana Pembelajaran"
         disabled={disabled}
       >
@@ -48,7 +48,7 @@ const ClassSelector: React.FC<ClassSelectorProps> = ({ classProfiles, activeClas
         id={id}
         value={activeClassId || ''}
         onChange={(e) => onClassChange(e.target.value)}
-        className="block w-full pl-2 pr-8 py-1.5 text-sm border-slate-300 focus:outline-none focus:ring-teal-500 focus:border-teal-500 rounded-md truncate bg-white disabled:bg-slate-100 disabled:text-slate-500 disabled:cursor-not-allowed"
+        className="block w-full pl-2 pr-8 py-1.5 text-sm border-slate-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-md truncate bg-white disabled:bg-slate-100 disabled:text-slate-500 disabled:cursor-not-allowed"
         aria-label="Pilih Kelas Aktif"
         disabled={disabled}
       >
@@ -77,7 +77,7 @@ const SemesterSelector: React.FC<SemesterSelectorProps> = ({ activeSemester, onS
         id={id}
         value={activeSemester}
         onChange={(e) => onSemesterChange(e.target.value)}
-        className="block w-full pl-2 pr-8 py-1.5 text-sm border-slate-300 focus:outline-none focus:ring-teal-500 focus:border-teal-500 rounded-md truncate bg-white disabled:bg-slate-100 disabled:text-slate-500 disabled:cursor-not-allowed"
+        className="block w-full pl-2 pr-8 py-1.5 text-sm border-slate-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-md truncate bg-white disabled:bg-slate-100 disabled:text-slate-500 disabled:cursor-not-allowed"
         disabled={disabled}
         aria-label="Pilih Semester Aktif"
       >
@@ -180,7 +180,7 @@ export const Header: React.FC = () => {
                   aria-label="Buka Pengaturan"
                   title="Pengaturan"
                 >
-                  <SettingsIcon className="h-6 w-6 text-sky-500" />
+                  <SettingsIcon className="h-6 w-6 text-indigo-500" />
                 </button>
             </div>
         </div>
@@ -194,7 +194,7 @@ export const Header: React.FC = () => {
                 <div className="flex items-center gap-2 flex-shrink-0">
                      <OnlineStatusIndicator isMobile />
                      {activeClassProfile && (
-                        <div className="text-xs font-semibold text-teal-700 bg-teal-100 px-2 py-0.5 rounded-full whitespace-nowrap">
+                        <div className="text-xs font-semibold text-indigo-700 bg-indigo-100 px-2 py-0.5 rounded-full whitespace-nowrap">
                             F:{activeClassProfile.phase} | {activeClassProfile.name}
                         </div>
                     )}
@@ -203,7 +203,7 @@ export const Header: React.FC = () => {
                       className="p-1.5 rounded-full hover:bg-slate-200"
                       aria-label="Buka Pengaturan"
                     >
-                      <SettingsIcon className="h-5 w-5 text-sky-500" />
+                      <SettingsIcon className="h-5 w-5 text-indigo-500" />
                     </button>
                 </div>
             </div>
@@ -252,7 +252,7 @@ export const Header: React.FC = () => {
                   </div>
                 <button 
                   onClick={() => setIsMobileSelectorOpen(false)} 
-                  className="w-full text-sm font-semibold text-teal-600 bg-teal-100 py-1.5 rounded-md hover:bg-teal-200"
+                  className="w-full text-sm font-semibold text-indigo-600 bg-indigo-100 py-1.5 rounded-md hover:bg-indigo-200"
                 >
                   Selesai
                 </button>
@@ -266,7 +266,7 @@ export const Header: React.FC = () => {
                 </div>
                 <button 
                   onClick={() => setIsMobileSelectorOpen(true)}
-                  className="text-sm font-semibold text-teal-600 hover:text-teal-800 flex-shrink-0 ml-2 bg-slate-100 px-3 py-1 rounded-md disabled:bg-slate-200 disabled:text-slate-500 disabled:cursor-not-allowed flex items-center gap-1"
+                  className="text-sm font-semibold text-indigo-600 hover:text-indigo-800 flex-shrink-0 ml-2 bg-slate-100 px-3 py-1 rounded-md disabled:bg-slate-200 disabled:text-slate-500 disabled:cursor-not-allowed flex items-center gap-1"
                   disabled={!!assessingSession}
                 >
                   {!!assessingSession ? 'Sesi Aktif' : 'Ubah Konteks'}

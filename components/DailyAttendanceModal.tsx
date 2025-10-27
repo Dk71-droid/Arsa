@@ -140,7 +140,7 @@ export const DailyAttendanceModal: React.FC<DailyAttendanceModalProps> = ({ date
                     ) : (
                         <>
                             <div className="flex justify-end mb-4">
-                                <button onClick={handleMarkAllPresent} className="px-3 py-1.5 bg-teal-100 text-teal-800 text-sm font-semibold rounded-md hover:bg-teal-200">
+                                <button onClick={handleMarkAllPresent} className="px-3 py-1.5 bg-indigo-100 text-indigo-800 text-sm font-semibold rounded-md hover:bg-indigo-200">
                                     Tandai Semua Hadir
                                 </button>
                             </div>
@@ -187,7 +187,7 @@ export const DailyAttendanceModal: React.FC<DailyAttendanceModalProps> = ({ date
                         {isHolidayMode ? (
                              <button onClick={handleSaveHoliday} disabled={!holidayDescription.trim()} className="px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 font-semibold disabled:bg-slate-400">Simpan Libur</button>
                         ) : (
-                            <button onClick={handleSave} className="px-6 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 font-semibold">Simpan Absensi</button>
+                            <button onClick={handleSave} className="px-6 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-semibold">Simpan Absensi</button>
                         )}
                     </div>
                 </footer>

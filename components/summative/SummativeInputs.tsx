@@ -32,7 +32,7 @@ export const ScoreInput: React.FC<{ value: number | null; onChange: (score: numb
             <input
                 type="number" min="0" max="100" value={displayValue}
                 onChange={handleChange} onBlur={handleBlur}
-                className="w-20 text-center p-2 rounded-md border border-slate-300 focus:ring-teal-500 focus:border-teal-500 bg-transparent"
+                className="w-20 text-center p-2 rounded-md border border-slate-300 focus:ring-indigo-500 focus:border-indigo-500 bg-transparent"
             />
             {predicateInfo && <span className={`absolute right-2 top-1/2 -translate-y-1/2 text-xs font-bold pointer-events-none ${predicateInfo.textColor}`}>{predicateInfo.predicate}</span>}
         </div>
@@ -74,7 +74,7 @@ export const LevelInput: React.FC<LevelInputProps> = ({ value, onChange, kriteri
 
                 const tooltipContent = (
                     <>
-                        <h5 className="font-bold text-teal-300 text-sm mb-1">{info.label} (Level {level})</h5>
+                        <h5 className="font-bold text-indigo-300 text-sm mb-1">{info.label} (Level {level})</h5>
                         <p className="text-slate-200">{kriteriaDeskripsi}</p>
                     </>
                 );

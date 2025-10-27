@@ -54,7 +54,7 @@ const ApiKeyManager: React.FC = () => {
                             className="w-full p-2 border rounded-md"
                         />
                     </div>
-                    <button type="submit" disabled={!apiKeyInput.trim() || isSaving} className="w-full flex justify-center items-center gap-2 bg-teal-600 text-white p-2 rounded-md hover:bg-teal-700 disabled:bg-slate-400 font-semibold">
+                    <button type="submit" disabled={!apiKeyInput.trim() || isSaving} className="w-full flex justify-center items-center gap-2 bg-indigo-600 text-white p-2 rounded-md hover:bg-indigo-700 disabled:bg-slate-400 font-semibold">
                         {isSaving ? 'Menyimpan...' : 'Simpan Kunci API'}
                     </button>
                 </form>
@@ -122,7 +122,7 @@ export const SettingsView: React.FC = () => {
             <AccordionItem
                 id="api"
                 title="Manajemen Kunci API Gemini"
-                icon={<LockIcon className="h-5 w-5 text-teal-600" />}
+                icon={<LockIcon className="h-5 w-5 text-indigo-600" />}
                 isOpen={openAccordion === 'api'}
                 onToggle={setOpenAccordion}
             >
@@ -132,7 +132,7 @@ export const SettingsView: React.FC = () => {
             <AccordionItem
                 id="kelas"
                 title="Manajemen Kelas & Siswa"
-                icon={<UsersIcon className="h-5 w-5 text-teal-600" />}
+                icon={<UsersIcon className="h-5 w-5 text-indigo-600" />}
                 isOpen={openAccordion === 'kelas'}
                 onToggle={setOpenAccordion}
             >
@@ -149,7 +149,7 @@ export const SettingsView: React.FC = () => {
                                         </p>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <button onClick={() => setManagingStudentsFor(managingStudentsFor === profile.id ? null : profile.id)} className="text-sm font-semibold text-teal-700 bg-teal-100 px-3 py-1.5 rounded-md hover:bg-teal-200">Kelola Siswa</button>
+                                        <button onClick={() => setManagingStudentsFor(managingStudentsFor === profile.id ? null : profile.id)} className="text-sm font-semibold text-indigo-700 bg-indigo-100 px-3 py-1.5 rounded-md hover:bg-indigo-200">Kelola Siswa</button>
                                         <button onClick={() => setEditingClass(profile)} className="p-2 rounded-full hover:bg-slate-200"><PencilIcon className="h-4 w-4 text-slate-600" /></button>
                                         <button onClick={() => deleteClassProfile(profile.id)} className="p-2 rounded-full hover:bg-red-100"><TrashIcon className="h-4 w-4 text-red-500" /></button>
                                     </div>
@@ -165,7 +165,7 @@ export const SettingsView: React.FC = () => {
                                 )}
                             </div>
                         ))}
-                        <button onClick={() => setIsAddingClass(true)} className="w-full flex justify-center items-center gap-2 p-3 border-2 border-dashed rounded-lg text-teal-600 font-semibold hover:bg-teal-50">
+                        <button onClick={() => setIsAddingClass(true)} className="w-full flex justify-center items-center gap-2 p-3 border-2 border-dashed rounded-lg text-indigo-600 font-semibold hover:bg-indigo-50">
                             <PlusCircleIcon className="h-5 w-5" /> Tambah Kelas Baru
                         </button>
                     </div>
@@ -175,7 +175,7 @@ export const SettingsView: React.FC = () => {
             <AccordionItem
                 id="rapor"
                 title="Informasi Rapor"
-                icon={<DocumentReportIcon className="h-5 w-5 text-teal-600" />}
+                icon={<DocumentReportIcon className="h-5 w-5 text-indigo-600" />}
                 isOpen={openAccordion === 'rapor'}
                 onToggle={setOpenAccordion}
             >
@@ -190,7 +190,7 @@ export const SettingsView: React.FC = () => {
                         </div>
                     </section>
                     <div className="flex justify-end pt-4 border-t">
-                        <button type="submit" disabled={isSaved} className="flex items-center gap-2 bg-teal-600 text-white font-bold py-2 px-6 rounded-lg shadow-md hover:bg-teal-700 disabled:bg-slate-400">
+                        <button type="submit" disabled={isSaved} className="flex items-center gap-2 bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg shadow-md hover:bg-indigo-700 disabled:bg-slate-400">
                             {isSaved ? <><CheckIcon className="h-5 w-5" /> Tersimpan</> : 'Simpan Info Rapor'}
                         </button>
                     </div>
@@ -199,7 +199,7 @@ export const SettingsView: React.FC = () => {
             
              <button
                 onClick={logout}
-                className="w-full flex justify-between items-center p-4 text-left bg-white rounded-lg border border-slate-200 shadow-sm hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 transition-colors"
+                className="w-full flex justify-between items-center p-4 text-left bg-white rounded-lg border border-slate-200 shadow-sm hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 transition-colors"
             >
                 <div className="flex items-center gap-4">
                     <div className="flex-shrink-0 h-10 w-10 rounded-lg bg-slate-100 flex items-center justify-center">
@@ -284,7 +284,7 @@ const ClassEditorModal: React.FC<{
                     </main>
                     <footer className="p-4 bg-slate-50 border-t flex justify-end gap-2">
                         <button type="button" onClick={onClose} className="px-4 py-2 bg-slate-200 rounded-md">Batal</button>
-                        <button type="submit" disabled={!profile.name || !profile.phase || !profile.grade} className="px-4 py-2 bg-teal-600 text-white rounded-md disabled:bg-slate-400">Simpan</button>
+                        <button type="submit" disabled={!profile.name || !profile.phase || !profile.grade} className="px-4 py-2 bg-indigo-600 text-white rounded-md disabled:bg-slate-400">Simpan</button>
                     </footer>
                 </form>
             </div>

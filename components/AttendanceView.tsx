@@ -3,7 +3,7 @@ import type { Student, AttendanceRecord, AttendanceStatus, HolidayRecord } from 
 import { DailyAttendanceModal } from './DailyAttendanceModal';
 import { Card } from './Card';
 import { ChevronDownIcon, CheckCircleIcon, CalendarIcon, ClipboardListIcon } from './icons';
-import { useAppData } from '../hooks/useAppData';
+import { useAppData } from '../../hooks/useAppData';
 
 const formatDateToYYYYMMDD = (date: Date): string => {
     return date.toISOString().split('T')[0];
@@ -169,7 +169,7 @@ export const AttendanceView: React.FC = () => {
                             onClick={() => setSchoolWeekType(type)}
                             className={`px-4 py-2 text-sm font-bold rounded-full transition-all ${
                                 schoolWeekType === type
-                                    ? 'bg-teal-600 text-white ring-2 ring-offset-2 ring-teal-500'
+                                    ? 'bg-indigo-600 text-white ring-2 ring-offset-2 ring-indigo-500'
                                     : 'bg-slate-200 text-slate-700 hover:bg-slate-300'
                             }`}
                         >
@@ -187,7 +187,7 @@ export const AttendanceView: React.FC = () => {
                         onClick={() => setActiveTab('calendar')}
                         className={`flex items-center gap-2 px-3 py-2 font-semibold text-sm rounded-t-lg border-b-2 ${
                             activeTab === 'calendar'
-                                ? 'border-teal-500 text-teal-600'
+                                ? 'border-indigo-500 text-indigo-600'
                                 : 'border-transparent text-slate-500 hover:text-slate-700'
                         }`}
                     >
@@ -198,7 +198,7 @@ export const AttendanceView: React.FC = () => {
                         onClick={() => setActiveTab('recap')}
                         className={`flex items-center gap-2 px-3 py-2 font-semibold text-sm rounded-t-lg border-b-2 ${
                             activeTab === 'recap'
-                                ? 'border-teal-500 text-teal-600'
+                                ? 'border-indigo-500 text-indigo-600'
                                 : 'border-transparent text-slate-500 hover:text-slate-700'
                         }`}
                     >
@@ -235,7 +235,7 @@ export const AttendanceView: React.FC = () => {
                             } else if (holidayInfo) {
                                 dayClasses += ' bg-orange-100 hover:bg-orange-200';
                             } else {
-                                dayClasses += ' bg-white hover:bg-teal-50';
+                                dayClasses += ' bg-white hover:bg-indigo-50';
                             }
                             
                             const summary: Record<string, number> = {};

@@ -41,7 +41,7 @@ export const StudentManager: React.FC<{
             <h3 className="font-bold text-slate-800 text-center md:text-left">Siswa di {classProfile.name}</h3>
             <form onSubmit={handleBulkAdd} className="my-2 space-y-2">
                 <textarea value={newStudentsInput} onChange={e => setNewStudentsInput(e.target.value)} placeholder="Satu nama per baris. Opsional, tambahkan NIS setelah koma..." rows={3} className="w-full p-2 border rounded-md" />
-                <button type="submit" disabled={!newStudentsInput.trim()} className="w-full flex justify-center items-center gap-2 bg-teal-600 text-white p-2 rounded-md hover:bg-teal-700 disabled:bg-slate-400 font-semibold">
+                <button type="submit" disabled={!newStudentsInput.trim()} className="w-full flex justify-center items-center gap-2 bg-indigo-600 text-white p-2 rounded-md hover:bg-indigo-700 disabled:bg-slate-400 font-semibold">
                     <PlusCircleIcon className="h-5 w-5" /> Tambah Siswa
                 </button>
             </form>

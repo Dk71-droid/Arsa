@@ -12,9 +12,9 @@ interface KktpEditorModalProps {
 }
 
 const LEVEL_HEADERS = [
-    { title: 'Mahir', level: 4, color: 'bg-green-100 text-green-800' },
-    { title: 'Cakap', level: 3, color: 'bg-blue-100 text-blue-800' },
-    { title: 'Layak', level: 2, color: 'bg-yellow-100 text-yellow-800' },
+    { title: 'Mahir', level: 4, color: 'bg-emerald-100 text-emerald-800' },
+    { title: 'Cakap', level: 3, color: 'bg-indigo-100 text-indigo-800' },
+    { title: 'Layak', level: 2, color: 'bg-amber-100 text-amber-800' },
     { title: 'Baru Berkembang', level: 1, color: 'bg-red-100 text-red-800' },
 ];
 
@@ -100,25 +100,25 @@ export const KktpEditorModal: React.FC<KktpEditorModalProps> = ({ kktp, tpDeskri
             
             {/* Scrollable Body */}
             <main className="flex-grow p-6 overflow-y-auto space-y-6 bg-slate-100">
-                <div className="p-4 border rounded-lg bg-white border-t-4 border-teal-500">
+                <div className="p-4 border rounded-lg bg-white border-t-4 border-indigo-500">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label htmlFor="elemenCp" className="block text-sm font-medium text-slate-700">Elemen CP</label>
-                            <input id="elemenCp" type="text" value={editedKktp.elemenCp} onChange={e => handleFieldChange('elemenCp', e.target.value)} className="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm" />
+                            <input id="elemenCp" type="text" value={editedKktp.elemenCp} onChange={e => handleFieldChange('elemenCp', e.target.value)} className="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                         </div>
                         <div>
                             <label htmlFor="asesmenUntuk" className="block text-sm font-medium text-slate-700">Asesmen Untuk</label>
-                            <input id="asesmenUntuk" type="text" value={editedKktp.asesmenUntuk} onChange={e => handleFieldChange('asesmenUntuk', e.target.value)} className="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm" />
+                            <input id="asesmenUntuk" type="text" value={editedKktp.asesmenUntuk} onChange={e => handleFieldChange('asesmenUntuk', e.target.value)} className="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                         </div>
                         <div className="md:col-span-2">
                             <label htmlFor="batasKetercapaian" className="block text-sm font-medium text-slate-700">Batas Ketercapaian</label>
-                            <textarea id="batasKetercapaian" value={editedKktp.batasKetercapaian} onChange={e => handleFieldChange('batasKetercapaian', e.target.value)} rows={2} className="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm" />
+                            <textarea id="batasKetercapaian" value={editedKktp.batasKetercapaian} onChange={e => handleFieldChange('batasKetercapaian', e.target.value)} rows={2} className="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                         </div>
                     </div>
                 </div>
 
                 {editedKktp.rubrik.map((aspek, aspectIndex) => (
-                    <div key={aspectIndex} className="p-4 border rounded-lg bg-white relative group shadow-md border-l-4 border-teal-400">
+                    <div key={aspectIndex} className="p-4 border rounded-lg bg-white relative group shadow-md border-l-4 border-indigo-400">
                          <button onClick={() => handleDeleteAspect(aspectIndex)} className="absolute top-2 right-2 p-1.5 text-red-500 hover:bg-red-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" title="Hapus Aspek"><TrashIcon className="h-5 w-5" /></button>
                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 items-end">
                              <div className="md:col-span-3">
@@ -139,7 +139,7 @@ export const KktpEditorModal: React.FC<KktpEditorModalProps> = ({ kktp, tpDeskri
                                     type="checkbox"
                                     checked={aspek.sifatAspek === 'PRASYARAT_KRITIS'}
                                     onChange={e => handleRubrikChange(aspectIndex, 'sifatAspek', e.target.checked ? 'PRASYARAT_KRITIS' : 'LEPAS')}
-                                    className="h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+                                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                 />
                                 <label htmlFor={`aspek-prasyarat-${aspectIndex}`} className="text-sm font-medium text-slate-700">
                                     Jadikan Prasyarat Kritis
@@ -166,7 +166,7 @@ export const KktpEditorModal: React.FC<KktpEditorModalProps> = ({ kktp, tpDeskri
                     </div>
                 ))}
                 
-                <button onClick={handleAddAspect} className="w-full flex items-center justify-center gap-2 text-sm font-semibold text-teal-600 bg-white border-2 border-dashed border-teal-300 rounded-lg p-3 hover:bg-teal-50 transition-colors shadow-sm">
+                <button onClick={handleAddAspect} className="w-full flex items-center justify-center gap-2 text-sm font-semibold text-indigo-600 bg-white border-2 border-dashed border-indigo-300 rounded-lg p-3 hover:bg-indigo-50 transition-colors shadow-sm">
                     <PlusIcon className="h-5 w-5" />
                     Tambah Aspek Penilaian
                 </button>
@@ -180,7 +180,7 @@ export const KktpEditorModal: React.FC<KktpEditorModalProps> = ({ kktp, tpDeskri
                 </button>
                 <div className="flex items-center gap-3">
                     <button onClick={onClose} className="px-4 py-2 bg-slate-200 text-slate-700 rounded-md hover:bg-slate-300 font-semibold">Batal</button>
-                    <button onClick={handleSaveClick} className="px-6 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 font-semibold">Simpan Perubahan</button>
+                    <button onClick={handleSaveClick} className="px-6 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-semibold">Simpan Perubahan</button>
                 </div>
             </footer>
         </div>

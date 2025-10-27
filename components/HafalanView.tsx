@@ -111,7 +111,7 @@ export const HafalanView: React.FC = () => {
                         </p>
                         <button 
                             onClick={() => setIsGeneratorModalOpen(true)}
-                            className="mt-6 flex items-center gap-2 text-md font-semibold text-white bg-teal-600 rounded-md px-5 py-2 hover:bg-teal-700 transition-colors mx-auto"
+                            className="mt-6 flex items-center gap-2 text-md font-semibold text-white bg-indigo-600 rounded-md px-5 py-2 hover:bg-indigo-700 transition-colors mx-auto"
                         >
                             <WandIcon className="h-5 w-5" />
                             <span>Buat Paket Hafalan (AI)</span>
@@ -148,14 +148,14 @@ export const HafalanView: React.FC = () => {
                          <select
                             value={selectedPackageId || ''}
                             onChange={(e) => setSelectedPackageId(e.target.value)}
-                            className="block w-full p-2 text-base border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                            className="block w-full p-2 text-base border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                         >
                             <option value="" disabled>Pilih Paket Hafalan...</option>
                             {hafalanPackages.map(pkg => (
                                 <option key={pkg.id} value={pkg.id}>{pkg.name}</option>
                             ))}
                         </select>
-                        <button onClick={() => setIsGeneratorModalOpen(true)} className="p-2.5 bg-teal-600 text-white rounded-md hover:bg-teal-700" title="Buat Paket Hafalan Baru">
+                        <button onClick={() => setIsGeneratorModalOpen(true)} className="p-2.5 bg-indigo-600 text-white rounded-md hover:bg-indigo-700" title="Buat Paket Hafalan Baru">
                             <PlusIcon className="h-5 w-5" />
                         </button>
                     </div>

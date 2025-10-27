@@ -119,7 +119,7 @@ export const SummativeGeneratorModal: React.FC<SummativeGeneratorModalProps> = (
                         {stage !== 'loading' && <button onClick={onClose} className="px-4 py-2 bg-slate-200 text-slate-700 font-semibold rounded-md hover:bg-slate-300">Batal</button>}
                         {stage === 'result' && generatedHtml && (
                             <>
-                                <button onClick={handleSave} className="px-4 py-2 bg-teal-600 text-white font-semibold rounded-md hover:bg-teal-700">Simpan Hasil HTML</button>
+                                <button onClick={handleSave} className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700">Simpan Hasil HTML</button>
                                 <button onClick={() => generatedHtml && openHtmlInNewTab(generatedHtml, showAlert)} className="px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 flex items-center gap-2">
                                     <DownloadIcon className="h-5 w-5"/>
                                     Cetak / Simpan PDF

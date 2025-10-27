@@ -15,12 +15,12 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({ id, title, icon, c
         <div className="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden transition-all duration-300">
             <button
                 onClick={() => onToggle(isOpen ? null : id)}
-                className="w-full flex justify-between items-center p-4 text-left hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
+                className="w-full flex justify-between items-center p-4 text-left hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
                 aria-expanded={isOpen}
                 aria-controls={`accordion-content-${id}`}
             >
                 <div className="flex items-center gap-4">
-                    <div className="flex-shrink-0 h-10 w-10 rounded-lg bg-teal-100 flex items-center justify-center">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-lg bg-indigo-100 flex items-center justify-center">
                         {icon}
                     </div>
                     <h2 className="text-lg font-bold text-slate-800">{title}</h2>

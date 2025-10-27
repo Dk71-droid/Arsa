@@ -20,23 +20,23 @@ export const FocusCard: React.FC<{
     return (
         <Card className="flex flex-col xl:col-span-1">
             <h3 className="text-xl font-bold text-slate-700 mb-4 flex items-center gap-3">
-                <TargetIcon className="h-6 w-6 text-teal-600" />
+                <TargetIcon className="h-6 w-6 text-indigo-600" />
                 Fokus Saat Ini
             </h3>
             {tp ? (
                 <div className="space-y-4 flex flex-col flex-grow">
-                    <div className="p-4 bg-teal-50 rounded-lg border border-teal-200">
-                        <p className="text-sm font-semibold text-teal-800">{tp.id}</p>
+                    <div className="p-4 bg-indigo-50 rounded-lg border border-indigo-200">
+                        <p className="text-sm font-semibold text-indigo-800">{tp.id}</p>
                         <p className="text-slate-700 mt-1">{tp.deskripsi}</p>
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="relative h-20 w-20">
                             <svg className="w-full h-full" viewBox="0 0 36 36">
                                 <path className="text-slate-200" strokeWidth="3" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path className="text-teal-500" strokeWidth="3" fill="none" strokeDasharray={`${completionPercentage}, 100`} d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path className="text-indigo-500" strokeWidth="3" fill="none" strokeDasharray={`${completionPercentage}, 100`} d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                             </svg>
                             <div className="absolute inset-0 flex items-center justify-center">
-                                <span className="text-2xl font-bold text-teal-600">{completionPercentage.toFixed(0)}<span className="text-base">%</span></span>
+                                <span className="text-2xl font-bold text-indigo-600">{completionPercentage.toFixed(0)}<span className="text-base">%</span></span>
                             </div>
                         </div>
                         <div>
@@ -44,7 +44,7 @@ export const FocusCard: React.FC<{
                             <p className="text-sm text-slate-500">{status.tuntasCount} dari {status.totalStudents} siswa tuntas</p>
                         </div>
                     </div>
-                    <button onClick={onNavigate} className="w-full mt-auto bg-teal-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-md hover:bg-teal-700 transition-colors">
+                    <button onClick={onNavigate} className="w-full mt-auto bg-indigo-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition-colors">
                         {buttonText}
                     </button>
                 </div>

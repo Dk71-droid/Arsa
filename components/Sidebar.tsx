@@ -11,7 +11,7 @@ const NavItem: React.FC<{
   isSubItem?: boolean;
 }> = ({ icon, label, isActive, onClick, disabled = false, isSubItem = false }) => {
   const baseClasses = "flex items-center w-full text-left p-3 rounded-lg transition-colors";
-  const activeClasses = "bg-teal-600 text-white shadow-sm";
+  const activeClasses = "bg-indigo-600 text-white shadow-sm";
   const inactiveClasses = "text-slate-600 hover:bg-slate-100 hover:text-slate-900";
   const disabledClasses = "text-slate-400 cursor-not-allowed";
   const subItemClasses = isSubItem ? "pl-4" : "";
@@ -22,7 +22,7 @@ const NavItem: React.FC<{
       disabled={disabled}
       className={`${baseClasses} ${subItemClasses} ${isActive ? activeClasses : disabled ? disabledClasses : inactiveClasses}`}
     >
-      <span className="mr-3">{icon}</span>
+      <span className="mr-3 h-5 w-5">{icon}</span>
       <span className="font-semibold">{label}</span>
     </button>
   );
@@ -34,7 +34,7 @@ const PlanItem: React.FC<{
   onClick: () => void;
 }> = ({ label, isActive, onClick }) => {
   const baseClasses = "flex items-center w-full text-left px-3 py-2 rounded-md transition-colors text-sm";
-  const activeClasses = "bg-teal-600 text-white font-semibold";
+  const activeClasses = "bg-indigo-600 text-white font-semibold";
   const inactiveClasses = "text-slate-600 hover:bg-slate-100 hover:text-slate-900";
 
   return (
@@ -62,7 +62,7 @@ export const Sidebar: React.FC = () => {
   return (
     <aside className="hidden md:flex flex-col w-64 bg-white p-4 flex-shrink-0 border-r border-slate-200">
       <div className="flex items-center gap-3 mb-8 px-2">
-        <BookOpenIcon className="h-10 w-10 text-teal-500" />
+        <BookOpenIcon className="h-10 w-10 text-indigo-500" />
         <div>
           <h1 className="text-xl font-bold text-slate-800">Arsa</h1>
           <p className="text-xs text-slate-500">Asisten Cerdas Pendidik</p>
@@ -70,13 +70,13 @@ export const Sidebar: React.FC = () => {
       </div>
       <nav className="flex-1 flex flex-col space-y-2">
         <NavItem
-          icon={<HomeIcon className="h-5 w-5 text-blue-500" />}
+          icon={<HomeIcon />}
           label="Dashboard"
           isActive={activeView === 'dashboard'}
           onClick={() => setActiveView('dashboard')}
         />
         <NavItem
-          icon={<WandIcon className="h-5 w-5 text-purple-500" />}
+          icon={<WandIcon />}
           label="Rancangan Pembelajaran"
           isActive={activeView === 'rancanganPembelajaran'}
           onClick={() => setActiveView('rancanganPembelajaran')}
@@ -88,35 +88,35 @@ export const Sidebar: React.FC = () => {
             <div className="space-y-1 mt-1">
                  <NavItem
                   isSubItem
-                  icon={<UserCheckIcon className="h-5 w-5 text-orange-500" />}
+                  icon={<UserCheckIcon />}
                   label="Absensi"
                   isActive={activeView === 'absensi'}
                   onClick={() => setActiveView('absensi')}
                 />
                 <NavItem
                   isSubItem
-                  icon={<UsersIcon className="h-5 w-5 text-pink-500" />}
+                  icon={<UsersIcon />}
                   label="Asesor Formatif"
                   isActive={activeView === 'assessor'}
                   onClick={() => setActiveView('assessor')}
                 />
                 <NavItem
                   isSubItem
-                  icon={<ClipboardListIcon className="h-5 w-5 text-indigo-500" />}
+                  icon={<ClipboardListIcon />}
                   label="Asesor Sumatif"
                   isActive={activeView === 'summativeAssessor'}
                   onClick={() => setActiveView('summativeAssessor')}
                 />
                 <NavItem
                   isSubItem
-                  icon={<BookmarkIcon className="h-5 w-5 text-cyan-500" />}
+                  icon={<BookmarkIcon />}
                   label="Hafalan"
                   isActive={activeView === 'hafalan'}
                   onClick={() => setActiveView('hafalan')}
                 />
                  <NavItem
                   isSubItem
-                  icon={<DocumentReportIcon className="h-5 w-5 text-green-500" />}
+                  icon={<DocumentReportIcon />}
                   label="Cetak Rapor"
                   isActive={activeView === 'reportView'}
                   onClick={() => setActiveView('reportView')}
@@ -128,7 +128,7 @@ export const Sidebar: React.FC = () => {
         <div className="pt-4 mt-auto border-t border-slate-200">
           <div className="flex justify-between items-center px-3 mb-2">
             <h2 className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Rencana Pembelajaran</h2>
-            <button onClick={handleShowNewPlanGenerator} title="Buat Rencana Baru" className="p-1 rounded-full text-teal-600 hover:bg-teal-100 transition-colors">
+            <button onClick={handleShowNewPlanGenerator} title="Buat Rencana Baru" className="p-1 rounded-full text-indigo-600 hover:bg-indigo-100 transition-colors">
               <PlusCircleIcon className="h-5 w-5" />
             </button>
           </div>

@@ -40,7 +40,7 @@ export const AppModals: React.FC = () => {
                                 <button onClick={() => setRegeneratingPlanId(null)} className="px-4 py-2 bg-slate-200 text-slate-700 rounded-md hover:bg-slate-300 font-semibold">
                                     Batal
                                 </button>
-                                <button onClick={handleRegenerateCurriculum} className="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 font-semibold">
+                                <button onClick={handleRegenerateCurriculum} className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-semibold">
                                     Ya, Generate Ulang
                                 </button>
                             </div>

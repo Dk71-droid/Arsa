@@ -134,7 +134,7 @@ export const SummativeDetailView: React.FC<SummativeDetailViewProps> = ({
             <div className="space-y-4">
                  <div className="flex justify-between items-center">
                      <div>
-                        <button onClick={onBack} className="flex items-center gap-2 text-sm font-semibold text-teal-600 hover:text-teal-800 mb-2">
+                        <button onClick={onBack} className="flex items-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-800 mb-2">
                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M15 18l-6-6 6-6"/></svg>
                            Kembali ke Daftar Sumatif
                        </button>
@@ -142,7 +142,7 @@ export const SummativeDetailView: React.FC<SummativeDetailViewProps> = ({
                      </div>
                       <div className="flex items-center gap-2">
                           {isDirty && <span className="text-sm font-semibold text-yellow-600 flex items-center gap-1.5"><AlertTriangleIcon className="h-4 w-4" /> Perubahan belum disimpan</span>}
-                          <button onClick={handleSave} disabled={!isDirty} className="flex items-center gap-2 font-semibold text-white bg-teal-600 rounded-md px-4 py-2.5 hover:bg-teal-700 transition-colors disabled:bg-slate-400">
+                          <button onClick={handleSave} disabled={!isDirty} className="flex items-center gap-2 font-semibold text-white bg-indigo-600 rounded-md px-4 py-2.5 hover:bg-indigo-700 transition-colors disabled:bg-slate-400">
                               <CheckIcon className="h-5 w-5" />
                               Simpan Nilai
                           </button>
@@ -181,7 +181,7 @@ export const SummativeDetailView: React.FC<SummativeDetailViewProps> = ({
                                                     const kriteriaDeskripsi = rubrikItem?.kriteria.find(k => k.level === level)?.deskripsi || 'Deskripsi tidak ditemukan.';
                                                     const tooltipContent = (
                                                         <>
-                                                            <h5 className="font-bold text-teal-300 text-sm mb-1">{levelInfo.label} (Level {level})</h5>
+                                                            <h5 className="font-bold text-indigo-300 text-sm mb-1">{levelInfo.label} (Level {level})</h5>
                                                             <p className="text-slate-200">{kriteriaDeskripsi}</p>
                                                         </>
                                                     );
@@ -191,7 +191,7 @@ export const SummativeDetailView: React.FC<SummativeDetailViewProps> = ({
                                                             onClick={() => handleBulkFill(tpId, aspek, levelInfo.score)}
                                                             onMouseEnter={(e) => handleShowTooltip(tooltipContent, e.currentTarget.getBoundingClientRect(), 'w-64')}
                                                             onMouseLeave={handleHideTooltip}
-                                                            className="w-6 h-6 flex items-center justify-center font-bold text-xs rounded-md transition-all border bg-slate-200 text-slate-600 hover:bg-teal-500 hover:text-white"
+                                                            className="w-6 h-6 flex items-center justify-center font-bold text-xs rounded-md transition-all border bg-slate-200 text-slate-600 hover:bg-indigo-500 hover:text-white"
                                                         >
                                                             {levelInfo.predicate}
                                                         </button>

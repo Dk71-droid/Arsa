@@ -15,7 +15,7 @@ export const UtilityCard = () => {
                 </div>
                 <button
                     onClick={() => showHtmlPreview('')}
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-2.5 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 shadow-md transition-transform transform hover:-translate-y-0.5"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-2.5 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 shadow-md transition-transform transform hover:-translate-y-0.5"
                 >
                     <WandIcon className="h-5 w-5" />
                     Render & Cetak Materi (HTML)

@@ -7,13 +7,13 @@ import { UnitPembelajaranTab } from './curriculum/UnitPembelajaranTab';
 import { TpTab } from './curriculum/TpTab';
 import { AtpTab } from './curriculum/AtpTab';
 import { KktpTab } from './curriculum/KktpTab';
-import { useAppData } from '../hooks/useAppData';
+import { useAppData } from '../../hooks/useAppData';
 
 type Tab = 'cp' | 'unit' | 'tp' | 'atp' | 'kktp';
 
 const TabButton: React.FC<{ active: boolean; onClick: () => void; children: React.ReactNode; disabled?: boolean }> = ({ active, onClick, children, disabled = false }) => {
     const baseClasses = "px-4 py-2 text-sm md:text-base font-semibold rounded-lg transition-colors flex items-center gap-2";
-    const activeClasses = "bg-teal-600 text-white shadow-md";
+    const activeClasses = "bg-indigo-600 text-white shadow-md";
     const inactiveClasses = "bg-white text-slate-600 hover:bg-slate-100 border border-slate-300";
     const disabledClasses = "opacity-50 cursor-not-allowed bg-slate-100";
     

@@ -134,7 +134,7 @@ export const QuickSyncModal: React.FC<QuickSyncModalProps> = ({ isOpen, onClose,
                                                             type="checkbox"
                                                             checked={syncStatus[student.id!]?.[tp.id] || false}
                                                             onChange={() => handleCheckboxChange(student.id!, tp.id)}
-                                                            className="h-5 w-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500 cursor-pointer"
+                                                            className="h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer"
                                                             title={syncStatus[student.id!]?.[tp.id] ? 'Tuntas' : 'Belum Tuntas'}
                                                         />
                                                     </td>
@@ -151,7 +151,7 @@ export const QuickSyncModal: React.FC<QuickSyncModalProps> = ({ isOpen, onClose,
                             </button>
                             <button
                                 onClick={handleSaveClick}
-                                className="px-4 py-2 bg-teal-600 text-white font-semibold rounded-md hover:bg-teal-700 flex items-center gap-2"
+                                className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 flex items-center gap-2"
                             >
                                 <WandIcon className="h-5 w-5" />
                                 Simpan Progres & Lanjutkan

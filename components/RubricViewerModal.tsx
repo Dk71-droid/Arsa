@@ -1,4 +1,5 @@
 
+
 import React, { useEffect, useRef } from 'react';
 import type { TujuanPembelajaran } from '../types';
 import { StarIcon } from './icons';
@@ -64,7 +65,7 @@ export const RubricViewerModal: React.FC<RubricViewerModalProps> = ({ tp, onClos
                         </div>
                         {tp.kktp.batasKetercapaian && (
                             <div className="mt-3 pt-3 border-t border-slate-200">
-                                <h5 className="font-semibold text-teal-800 flex items-center gap-2">
+                                <h5 className="font-semibold text-indigo-800 flex items-center gap-2">
                                     <StarIcon className="h-5 w-5" />
                                     Batas Ketercapaian (KKTP)
                                 </h5>
@@ -90,7 +91,7 @@ export const RubricViewerModal: React.FC<RubricViewerModalProps> = ({ tp, onClos
                                     const sortedKriteria = [...item.kriteria].sort((a,b) => b.level - a.level);
                                     return (
                                         <tr key={item.aspek} className="hover:bg-slate-50">
-                                            <td className="p-3 border-b border-r border-slate-200 font-bold text-teal-800 align-top">
+                                            <td className="p-3 border-b border-r border-slate-200 font-bold text-indigo-800 align-top">
                                                 <div>
                                                     <p>{item.aspek}</p>
                                                     <div className="mt-1 font-normal text-xs">
@@ -115,7 +116,7 @@ export const RubricViewerModal: React.FC<RubricViewerModalProps> = ({ tp, onClos
                 </div>
 
                 <div className="p-4 bg-slate-50 border-t border-slate-200 flex justify-end">
-                    <button onClick={onClose} className="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700">Tutup</button>
+                    <button onClick={onClose} className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Tutup</button>
                 </div>
             </div>
         </div>

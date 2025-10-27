@@ -246,7 +246,7 @@ export const FormativeDetailView: React.FC<FormativeDetailViewProps> = ({
                  <button
                      onClick={() => onGenerateKktp(assessingTp.id)}
                      disabled={loadingKktpId === assessingTp.id}
-                     className="mt-6 flex items-center justify-center gap-2 bg-teal-600 text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-teal-700 transition-all disabled:bg-slate-400 mx-auto"
+                     className="mt-6 flex items-center justify-center gap-2 bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-indigo-700 transition-all disabled:bg-slate-400 mx-auto"
                  >
                      <WandIcon className="h-5 w-5" />
                      {loadingKktpId === assessingTp.id ? 'Membuat...' : 'Buat Rubrik KKTP dengan AI'}
@@ -283,16 +283,16 @@ export const FormativeDetailView: React.FC<FormativeDetailViewProps> = ({
                 </div>
                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                     <div className="flex items-center gap-2">
-                         <button onClick={() => setIsRubricModalOpen(true)} className="flex items-center gap-2 text-sm font-semibold text-teal-600 bg-teal-50 border border-teal-200 rounded-md px-3 py-1.5 hover:bg-teal-100">
+                         <button onClick={() => setIsRubricModalOpen(true)} className="flex items-center gap-2 text-sm font-semibold text-indigo-600 bg-indigo-50 border border-indigo-200 rounded-md px-3 py-1.5 hover:bg-indigo-100">
                            <ListIcon className="h-4 w-4" /> Lihat Rincian Rubrik
                          </button>
-                         <button onClick={() => setIsNoteModalOpen(true)} disabled={isLocked} className="flex items-center gap-2 text-sm font-semibold text-teal-600 bg-teal-50 border border-teal-200 rounded-md px-3 py-1.5 hover:bg-teal-100 disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed">
+                         <button onClick={() => setIsNoteModalOpen(true)} disabled={isLocked} className="flex items-center gap-2 text-sm font-semibold text-indigo-600 bg-indigo-50 border border-indigo-200 rounded-md px-3 py-1.5 hover:bg-indigo-100 disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed">
                            <NoteIcon className="h-4 w-4" /> Catatan Sesi (AI)
                          </button>
                     </div>
                      <div className="flex items-center gap-2 self-end sm:self-center">
-                         {isDirty && !isLocked && <span className="text-sm font-semibold text-yellow-600 flex items-center gap-1.5"><AlertTriangleIcon className="h-4 w-4" /> Perubahan belum disimpan</span>}
-                         <button onClick={handleSave} disabled={!isDirty || isLocked} className="flex items-center gap-2 text-sm font-semibold rounded-md px-4 py-2 transition-colors bg-teal-600 text-white hover:bg-teal-700 disabled:bg-slate-400 disabled:cursor-not-allowed">
+                         {isDirty && !isLocked && <span className="text-sm font-semibold text-amber-600 flex items-center gap-1.5"><AlertTriangleIcon className="h-4 w-4" /> Perubahan belum disimpan</span>}
+                         <button onClick={handleSave} disabled={!isDirty || isLocked} className="flex items-center gap-2 text-sm font-semibold rounded-md px-4 py-2 transition-colors bg-indigo-600 text-white hover:bg-indigo-700 disabled:bg-slate-400 disabled:cursor-not-allowed">
                              <CheckIcon className="h-4 w-4" /> Simpan Perubahan
                          </button>
                      </div>
@@ -300,7 +300,7 @@ export const FormativeDetailView: React.FC<FormativeDetailViewProps> = ({
             </header>
 
             {isLocked && (
-                <div className="p-3 bg-yellow-50 border-b border-yellow-200 text-yellow-800 text-sm flex items-center gap-3 flex-shrink-0">
+                <div className="p-3 bg-amber-50 border-b border-amber-200 text-amber-800 text-sm flex items-center gap-3 flex-shrink-0">
                     <LockIcon className="h-5 w-5 flex-shrink-0" />
                     <div>
                         <p className="font-bold">Mode Lihat Saja</p>
@@ -323,7 +323,7 @@ export const FormativeDetailView: React.FC<FormativeDetailViewProps> = ({
                                         {hasFocusDataForAspek && (
                                             <button 
                                                 onClick={() => handleShowFocusGuide(aspek)}
-                                                className="text-yellow-400 hover:text-yellow-500 p-1 rounded-full hover:bg-yellow-100 transition-transform hover:scale-110"
+                                                className="text-amber-400 hover:text-amber-500 p-1 rounded-full hover:bg-amber-100 transition-transform hover:scale-110"
                                                 title={`Lihat panduan fokus AI untuk aspek '${aspek.aspek}'`}
                                             >
                                                 <LightbulbIcon className="h-5 w-5" />
@@ -331,7 +331,7 @@ export const FormativeDetailView: React.FC<FormativeDetailViewProps> = ({
                                         )}
                                     </div>
                                     {aspek.sifatAspek === 'PRASYARAT_KRITIS' && (
-                                        <span className="mt-1 inline-block px-1.5 py-0.5 text-xs font-semibold rounded-full bg-yellow-200 text-yellow-800">Prasyarat</span>
+                                        <span className="mt-1 inline-block px-1.5 py-0.5 text-xs font-semibold rounded-full bg-amber-200 text-amber-800">Prasyarat</span>
                                     )}
                                     <div className="flex items-center justify-center gap-1 mt-1.5">
                                         {[4, 3, 2, 1].map(level => {
@@ -339,7 +339,7 @@ export const FormativeDetailView: React.FC<FormativeDetailViewProps> = ({
                                             const kriteriaDeskripsi = aspek.kriteria.find(k => k.level === level)?.deskripsi || 'Deskripsi tidak ditemukan.';
                                             const tooltipContent = (
                                                 <>
-                                                    <h5 className="font-bold text-teal-300 text-sm mb-1">{levelInfo.label} (Level {level})</h5>
+                                                    <h5 className="font-bold text-indigo-300 text-sm mb-1">{levelInfo.label} (Level {level})</h5>
                                                     <p className="text-slate-200">{kriteriaDeskripsi}</p>
                                                 </>
                                             );
@@ -350,7 +350,7 @@ export const FormativeDetailView: React.FC<FormativeDetailViewProps> = ({
                                                     onMouseEnter={(e) => handleShowTooltip(tooltipContent, e.currentTarget.getBoundingClientRect(), 'w-64')}
                                                     onMouseLeave={handleHideTooltip}
                                                     disabled={isLocked}
-                                                    className="w-6 h-6 flex items-center justify-center font-bold text-xs rounded-md transition-all border bg-slate-200 text-slate-600 hover:bg-teal-500 hover:text-white disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed"
+                                                    className="w-6 h-6 flex items-center justify-center font-bold text-xs rounded-md transition-all border bg-slate-200 text-slate-600 hover:bg-indigo-500 hover:text-white disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed"
                                                 >
                                                     {levelInfo.predicate}
                                                 </button>
@@ -390,9 +390,9 @@ export const FormativeDetailView: React.FC<FormativeDetailViewProps> = ({
             <footer className="flex-shrink-0 p-3 bg-slate-50 border-t flex items-center gap-4">
                  <p className="text-sm font-semibold text-slate-600">Ringkasan Ketuntasan Kelas:</p>
                  <div className="w-40 bg-slate-200 rounded-full h-2.5">
-                     <div className="bg-teal-600 h-2.5 rounded-full" style={{ width: `${completionPercentage}%` }}></div>
+                     <div className="bg-indigo-600 h-2.5 rounded-full" style={{ width: `${completionPercentage}%` }}></div>
                  </div>
-                 <p className="text-sm font-bold text-teal-700">{completionPercentage.toFixed(0)}% Tuntas</p>
+                 <p className="text-sm font-bold text-indigo-700">{completionPercentage.toFixed(0)}% Tuntas</p>
                  <span className="text-xs text-slate-500">({tuntasCount} dari {students.length} siswa)</span>
             </footer>
 

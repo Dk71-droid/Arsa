@@ -51,12 +51,12 @@ const App: React.FC = () => {
         if (isCoreView && !activePlanId) {
              return (
                 <div className="space-y-6 text-center mt-10 flex flex-col items-center">
-                    <WandIcon className="mx-auto h-16 w-16 text-teal-500" />
+                    <WandIcon className="mx-auto h-16 w-16 text-indigo-500" />
                     <h2 className="text-2xl font-bold text-slate-700">Pilih Rencana Pembelajaran</h2>
                     <p className="text-slate-500 max-w-md">Untuk menggunakan fitur ini, Anda perlu membuat atau memilih Rencana Pembelajaran (Mata Pelajaran) terlebih dahulu.</p>
                     <button
                         onClick={handleShowNewPlanGenerator}
-                        className="mt-4 flex items-center gap-2 text-lg font-semibold text-white bg-teal-600 border border-teal-600 rounded-md px-6 py-2.5 hover:bg-teal-700 transition-colors"
+                        className="mt-4 flex items-center gap-2 text-lg font-semibold text-white bg-indigo-600 border border-indigo-600 rounded-md px-6 py-2.5 hover:bg-indigo-700 transition-colors"
                     >
                         <WandIcon className="h-5 w-5" />
                         <span>Buat Rencana Baru</span>
@@ -68,12 +68,12 @@ const App: React.FC = () => {
         if (isCoreView && !activeClassId) {
              return (
                 <div className="space-y-6 text-center mt-10 flex flex-col items-center">
-                    <UsersIcon className="mx-auto h-16 w-16 text-teal-500" />
+                    <UsersIcon className="mx-auto h-16 w-16 text-indigo-500" />
                     <h2 className="text-2xl font-bold text-slate-700">Pilih Kelas Aktif</h2>
                     <p className="text-slate-500 max-w-md">Pilih kelas yang ingin Anda kelola dari menu dropdown di bagian atas, atau buat kelas baru di menu Pengaturan.</p>
                     <button
                         onClick={() => setActiveView('settings')}
-                        className="mt-4 flex items-center gap-2 text-lg font-semibold text-white bg-teal-600 border border-teal-600 rounded-md px-6 py-2.5 hover:bg-teal-700 transition-colors"
+                        className="mt-4 flex items-center gap-2 text-lg font-semibold text-white bg-indigo-600 border border-indigo-600 rounded-md px-6 py-2.5 hover:bg-indigo-700 transition-colors"
                     >
                         <UsersIcon className="h-5 w-5" />
                         <span>Buka Manajemen Kelas</span>
@@ -88,7 +88,7 @@ const App: React.FC = () => {
     const { isContainedScrollView } = useAppData();
 
     return (
-        <div className="h-screen bg-white flex font-sans">
+        <div className="h-screen bg-slate-50 flex">
             {activeView !== 'htmlPreview' && <Sidebar />}
             <main className="flex-1 flex flex-col overflow-hidden">
                 {!isDbLoading && !(activeView === 'assessor' && assessingSession) && (

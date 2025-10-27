@@ -43,7 +43,7 @@ export const ProgressChartCard: React.FC<ProgressChartCardProps> = ({ data, tota
       </p>
       <div className="flex-grow flex items-center justify-center relative min-h-[200px]">
         {data.length > 0 ? (
-          <svg viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`} className="w-full h-full">
+          <svg viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`} className="w-full h-full text-indigo-600">
             {yAxisLabels.map(label => {
               const y = PADDING.top + CHART_HEIGHT - (label / 100) * CHART_HEIGHT;
               return (
@@ -60,7 +60,7 @@ export const ProgressChartCard: React.FC<ProgressChartCardProps> = ({ data, tota
             })}
 
             {data.length > 1 && (
-              <polyline points={linePoints} fill="none" stroke="#4f46e5" strokeWidth="2" />
+              <polyline points={linePoints} fill="none" stroke="currentColor" strokeWidth="2" />
             )}
 
             {data.map((d, index) => {
@@ -71,7 +71,7 @@ export const ProgressChartCard: React.FC<ProgressChartCardProps> = ({ data, tota
                   cx={x}
                   cy={y}
                   r="4"
-                  fill="#4f46e5"
+                  fill="currentColor"
                   stroke="white"
                   strokeWidth="2"
                   className="cursor-pointer"

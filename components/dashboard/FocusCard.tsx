@@ -34,7 +34,7 @@ export const FocusCard: React.FC<{
                                 <path className="text-white/20" strokeWidth="4" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                                 <path className="text-white" strokeWidth="4" fill="none" strokeLinecap="round" strokeDasharray={`${completionPercentage}, 100`} d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                             </svg>
-                            <div className="absolute inset-0 flex items-center justify-center" style={{transform: 'rotate(90deg)'}}>
+                            <div className="absolute inset-0 flex items-center justify-center">
                                 <span className="text-2xl font-bold text-white">{completionPercentage.toFixed(0)}<span className="text-base">%</span></span>
                             </div>
                         </div>

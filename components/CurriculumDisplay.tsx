@@ -7,7 +7,7 @@ import { UnitPembelajaranTab } from './curriculum/UnitPembelajaranTab';
 import { TpTab } from './curriculum/TpTab';
 import { AtpTab } from './curriculum/AtpTab';
 import { KktpTab } from './curriculum/KktpTab';
-import { useAppData } from '../../hooks/useAppData';
+import { useAppData } from '../hooks/useAppData';
 
 type Tab = 'cp' | 'unit' | 'tp' | 'atp' | 'kktp';
 

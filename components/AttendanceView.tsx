@@ -3,7 +3,7 @@ import type { Student, AttendanceRecord, AttendanceStatus, HolidayRecord } from 
 import { DailyAttendanceModal } from './DailyAttendanceModal';
 import { Card } from './Card';
 import { ChevronDownIcon, CheckCircleIcon, CalendarIcon, ClipboardListIcon } from './icons';
-import { useAppData } from '../../hooks/useAppData';
+import { useAppData } from '../hooks/useAppData';
 
 const formatDateToYYYYMMDD = (date: Date): string => {
     return date.toISOString().split('T')[0];

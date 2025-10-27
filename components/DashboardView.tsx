@@ -9,7 +9,7 @@ import { UtilityCard } from './dashboard/UtilityCard';
 import { InterventionListCard } from './dashboard/InterventionListCard';
 import { RemedialAssessorModal } from './dashboard/RemedialAssessorModal';
 import { calculateTpCompletion } from './formative/utils';
-import { useAppData } from '../../hooks/useAppData';
+import { useAppData } from '../hooks/useAppData';
 
 // =================================================================
 // CONSTANTS

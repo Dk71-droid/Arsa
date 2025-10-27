@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import type { Student, TujuanPembelajaran, Session, LearningPlan, AspekRubrik, AiSessionResult, FokusAsesmenFormatif } from '../../types';
-import { XIcon, WandIcon, ListIcon, NoteIcon, CheckIcon, AlertTriangleIcon, LightbulbIconSolid, LockIcon } from '../icons';
+import { XIcon, WandIcon, ListIcon, NoteIcon, CheckIcon, AlertTriangleIcon, LightbulbIcon, LockIcon } from '../icons';
 import { PredicateSelector, FloatingTooltip } from './AssessmentInputs';
 import { SessionNoteModal } from './SessionNoteModal';
 import { RubricViewerModal } from '../RubricViewerModal';
@@ -326,7 +326,7 @@ export const FormativeDetailView: React.FC<FormativeDetailViewProps> = ({
                                                 className="text-yellow-400 hover:text-yellow-500 p-1 rounded-full hover:bg-yellow-100 transition-transform hover:scale-110"
                                                 title={`Lihat panduan fokus AI untuk aspek '${aspek.aspek}'`}
                                             >
-                                                <LightbulbIconSolid className="h-5 w-5" />
+                                                <LightbulbIcon className="h-5 w-5" />
                                             </button>
                                         )}
                                     </div>

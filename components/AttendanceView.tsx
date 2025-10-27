@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import type { Student, AttendanceRecord, AttendanceStatus, HolidayRecord } from '../types';
 import { DailyAttendanceModal } from './DailyAttendanceModal';
 import { Card } from './Card';
-import { ChevronDownIcon, CheckIconSolid, CalendarIcon, ClipboardListIcon } from './icons';
+import { ChevronDownIcon, CheckCircleIcon, CalendarIcon, ClipboardListIcon } from './icons';
 import { useAppData } from '../hooks/useAppData';
 
 const formatDateToYYYYMMDD = (date: Date): string => {
@@ -264,7 +264,7 @@ export const AttendanceView: React.FC = () => {
                                         <div className="text-xs mt-1 space-y-0.5 w-full">
                                             {allPresent ? (
                                                 <div className="flex items-center gap-1 text-green-600">
-                                                <CheckIconSolid className="h-4 w-4" />
+                                                <CheckCircleIcon className="h-4 w-4" />
                                                 <span className="font-bold">Hadir Semua</span>
                                                 </div>
                                             ) : (

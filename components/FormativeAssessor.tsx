@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from 'react';
-import type { Student, TujuanPembelajaran, AlurTujuanPembelajaran, LearningPlan, Session, DiagnosticRecommendation, DeepLearningLessonPlan, AdaptiveLessonStep } from '../../types';
+import type { Student, TujuanPembelajaran, AlurTujuanPembelajaran, LearningPlan, Session, DiagnosticRecommendation, DeepLearningLessonPlan, AdaptiveLessonStep } from '../types';
 import { FormativeJournalView } from './formative/FormativeJournalView';
 import { FormativeDetailView } from './formative/FormativeDetailView';
 import { AiAssistantModal } from './formative/AiAssistantModal';
-import { useAppData } from '../../hooks/useAppData';
+import { useAppData } from '../hooks/useAppData';
 
 const initialAssistantState: { 
     tp: TujuanPembelajaran | null; 

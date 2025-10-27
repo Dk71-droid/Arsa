@@ -115,31 +115,75 @@ const useAppDataLogic = () => {
 
     useEffect(() => {
         const loadData = async () => {
-            try {
-                const [plans, profiles, students, attendance, holidaysData, activePlan, activeClass, settingsJson, activeView] = await Promise.all([
-                    dbService.getAllPlans(), dbService.getAllClassProfiles(), dbService.getAllStudents(), dbService.getAllAttendance(), dbService.getAllHolidays(),
-                    dbService.getAppState('activePlanId'), dbService.getAppState('activeClassId'), dbService.getAppState('appSettings'), dbService.getAppState('activeView'),
-                ]);
-                
-                if (user) {
-                    const keyData = await dbService.getApiKey(user.uid);
-                    setUserApiKey(keyData ? keyData.apiKey : null);
-                    const tutorialStatus = await dbService.getAppState(`tutorialCompleted_${user.uid}`);
-                    if (tutorialStatus !== 'true') {
-                        setShowOnboarding(true);
-                    }
-                }
+            setIsDbLoading(true);
 
-                setLearningPlans(plans); setClassProfiles(profiles); setMasterStudents(students); setAttendanceRecords(attendance); setHolidays(holidaysData);
+            if (!user) {
+                // User logged out. Clear all user-specific state.
+                setLearningPlans([]);
+                setClassProfiles([]);
+                setMasterStudents([]);
+                setAttendanceRecords([]);
+                setHolidays([]);
+                setActivePlanIdState(null);
+                setActiveClassIdState(null);
+                setUserApiKey(null);
+                setSettings({});
+                _setActiveView('dashboard');
+                setShowOnboarding(false);
+                setIsDbLoading(false);
+                return;
+            }
+
+            // User is logged in. Load their data.
+            try {
+                const [plans, profiles, students, attendance, holidaysData, activePlan, activeClass, settingsJson, activeView, keyData] = await Promise.all([
+                    dbService.getAllPlans(),
+                    dbService.getAllClassProfiles(),
+                    dbService.getAllStudents(),
+                    dbService.getAllAttendance(),
+                    dbService.getAllHolidays(),
+                    dbService.getAppState('activePlanId'),
+                    dbService.getAppState('activeClassId'),
+                    dbService.getAppState('appSettings'),
+                    dbService.getAppState('activeView'),
+                    dbService.getApiKey(user.uid)
+                ]);
+
+                setUserApiKey(keyData ? keyData.apiKey : null);
+                setLearningPlans(plans);
+                setClassProfiles(profiles);
+                setMasterStudents(students);
+                setAttendanceRecords(attendance);
+                setHolidays(holidaysData);
                 setSettings(settingsJson ? JSON.parse(settingsJson) : {});
                 if (activePlan && plans.some(p => p.id === activePlan)) setActivePlanIdState(activePlan);
                 if (activeClass && profiles.some(p => p.id === activeClass)) setActiveClassIdState(activeClass);
                 _setActiveView((activeView as View) || 'dashboard');
-            } catch (e) { console.error("Failed to load data from IndexedDB", e); setError("Gagal memuat data dari database lokal.");
-            } finally { setIsDbLoading(false); }
+            } catch (e) {
+                console.error("Failed to load data from IndexedDB", e);
+                setError("Gagal memuat data dari database lokal.");
+            } finally {
+                setIsDbLoading(false);
+            }
         };
+
         loadData();
     }, [user]);
+    
+    // NEW: Separated useEffect for onboarding logic to prevent race conditions.
+    useEffect(() => {
+        const checkOnboarding = async () => {
+            // Run only after the user is confirmed and initial data load is complete.
+            if (user && !isDbLoading) {
+                const tutorialStatus = await dbService.getAppState(`tutorialCompleted_${user.uid}`);
+                if (tutorialStatus !== 'true') {
+                    setShowOnboarding(true);
+                }
+            }
+        };
+
+        checkOnboarding();
+    }, [user, isDbLoading]);
     
     const handleCompleteOnboarding = useCallback(async () => {
         if (user) {
